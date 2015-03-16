@@ -6,10 +6,15 @@ module CompanyScope
     def self.included(base)
       base.extend(TopLevelClassMethods)
       base.extend(FilterClassMethods)
-      base.include(FilterInstanceMethods)
+      base.include(FilterMethods)
     end
 
-    module FilterInstanceMethods
+    module FilterMethods
+      
+      def current_company
+        request.env["COMPANY_ID"] # a default that is best overridden in the application controller..
+      end
+        
       def filter_by_current_company_scope
         Company.current_id = current_company.id
         yield
@@ -19,6 +24,10 @@ module CompanyScope
     end
 
     module FilterClassMethods
+      #
+      def company_setup
+        helper_method :current_company
+      end        
       #
       def acts_as_company_filter
         around_filter :filter_by_current_company_scope
