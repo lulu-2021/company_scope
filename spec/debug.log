@@ -1,0 +1,1204 @@
+# Logfile created on 2015-03-16 21:10:10 +1100 by logger.rb/44203
+D, [2015-03-16T21:12:10.469230 #97700] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:12:10.469368 #97700] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T21:12:10.469473 #97700] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:12:10.469870 #97700] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-16T21:12:10.470430 #97700] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:12:10.470587 #97700] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-16T21:12:10.470721 #97700] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:12:10.472256 #97700] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-16T21:12:10.472806 #97700] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:12:10.472925 #97700] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T21:12:10.473022 #97700] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:12:10.475163 #97700] DEBUG -- :   [1m[35m (0.2ms)[0m  rollback transaction
+D, [2015-03-16T21:17:42.786933 #97729] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:17:42.787050 #97729] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T21:17:42.787138 #97729] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:17:42.787511 #97729] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-16T21:17:42.788030 #97729] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:17:42.788109 #97729] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T21:17:42.788195 #97729] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:17:42.788787 #97729] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-16T21:17:42.789113 #97729] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:17:42.789192 #97729] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T21:17:42.789269 #97729] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T21:17:42.789970 #97729] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-16T21:19:22.413423 #97741] DEBUG -- :   [1m[36m (1.5ms)[0m  [1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) [0m
+D, [2015-03-16T21:19:22.415452 #97741] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T21:19:22.417347 #97741] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) [0m
+D, [2015-03-16T21:19:22.433356 #97741] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+D, [2015-03-16T21:19:22.433698 #97741] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+D, [2015-03-16T21:19:22.435028 #97741] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+D, [2015-03-16T21:19:22.435426 #97741] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T21:19:22.436374 #97741] DEBUG -- :   [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('1')
+D, [2015-03-16T21:21:15.844251 #97754] DEBUG -- :   [1m[36m (9.3ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T21:21:15.845878 #97754] DEBUG -- :   [1m[35m (1.3ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T21:21:15.848327 #97754] DEBUG -- :   [1m[36m (1.2ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T21:21:15.849757 #97754] DEBUG -- :   [1m[35m (1.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T21:21:15.851879 #97754] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T21:21:15.853154 #97754] DEBUG -- :   [1m[35m (1.0ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T21:21:15.867069 #97754] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T21:26:58.753980 #97788] DEBUG -- :   [1m[36m (8.3ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T21:26:58.756771 #97788] DEBUG -- :   [1m[35m (1.9ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T21:26:58.759911 #97788] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T21:26:58.761039 #97788] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T21:26:58.762499 #97788] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T21:26:58.763519 #97788] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T21:26:58.784301 #97788] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T21:27:36.523271 #97796] DEBUG -- :   [1m[36m (9.2ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T21:27:36.525041 #97796] DEBUG -- :   [1m[35m (1.5ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T21:27:36.526915 #97796] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T21:27:36.527891 #97796] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T21:27:36.529374 #97796] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T21:27:36.530327 #97796] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T21:27:36.549099 #97796] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:11:26.605592 #97898] DEBUG -- :   [1m[36m (2.4ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:11:26.607364 #97898] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:11:26.609499 #97898] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:11:26.610427 #97898] DEBUG -- :   [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:11:26.612268 #97898] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:11:26.613489 #97898] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:11:26.639341 #97898] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:13:02.771654 #97911] DEBUG -- :   [1m[36m (1.8ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:13:02.773125 #97911] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:13:02.774985 #97911] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:13:02.776079 #97911] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:13:02.777558 #97911] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:13:02.778935 #97911] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:13:02.784359 #97911] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:14:25.843336 #97925] DEBUG -- :   [1m[36m (1.4ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:14:25.844710 #97925] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:14:25.846306 #97925] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:14:25.847288 #97925] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:14:25.848728 #97925] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:14:25.849820 #97925] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:14:25.855834 #97925] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:28:03.284785 #98026] DEBUG -- :   [1m[36m (1.9ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:28:03.286733 #98026] DEBUG -- :   [1m[35m (1.2ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:28:03.289533 #98026] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:28:03.290649 #98026] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:28:03.292107 #98026] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:28:03.293406 #98026] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:28:03.299307 #98026] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:28:35.369640 #98034] DEBUG -- :   [1m[36m (1.7ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:28:35.371516 #98034] DEBUG -- :   [1m[35m (1.2ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:28:35.373417 #98034] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:28:35.374490 #98034] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:28:35.375786 #98034] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:28:35.376873 #98034] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:28:35.382383 #98034] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:29:18.066515 #98042] DEBUG -- :   [1m[36m (1.4ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:29:18.068001 #98042] DEBUG -- :   [1m[35m (1.2ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:29:18.070260 #98042] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:29:18.071538 #98042] DEBUG -- :   [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:29:18.073163 #98042] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:29:18.074552 #98042] DEBUG -- :   [1m[35m (1.2ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:29:18.078734 #98042] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:29:50.077895 #98049] DEBUG -- :   [1m[36m (8.5ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:29:50.079912 #98049] DEBUG -- :   [1m[35m (1.6ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:29:50.082712 #98049] DEBUG -- :   [1m[36m (1.2ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:29:50.083773 #98049] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:29:50.085250 #98049] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:29:50.086287 #98049] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:29:50.090773 #98049] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:30:51.248809 #98059] DEBUG -- :   [1m[36m (8.3ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:30:51.250782 #98059] DEBUG -- :   [1m[35m (1.3ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:30:51.253464 #98059] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:30:51.254439 #98059] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:30:51.255837 #98059] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:30:51.256644 #98059] DEBUG -- :   [1m[35m (0.6ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:30:51.261856 #98059] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:31:17.799935 #98066] DEBUG -- :   [1m[36m (9.4ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:31:17.802206 #98066] DEBUG -- :   [1m[35m (1.5ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:31:17.803813 #98066] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:31:17.804738 #98066] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:31:17.806020 #98066] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:31:17.806942 #98066] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:31:17.811339 #98066] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:32:06.955374 #98074] DEBUG -- :   [1m[36m (9.7ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:32:06.957386 #98074] DEBUG -- :   [1m[35m (1.7ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:32:06.959163 #98074] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:32:06.960046 #98074] DEBUG -- :   [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:32:06.961344 #98074] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:32:06.965420 #98074] DEBUG -- :   [1m[35m (3.9ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:32:06.970685 #98074] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:34:52.358572 #98102] DEBUG -- :   [1m[36m (8.1ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:34:52.361061 #98102] DEBUG -- :   [1m[35m (1.9ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:34:52.363517 #98102] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:34:52.364511 #98102] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:34:52.365818 #98102] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:34:52.366767 #98102] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:34:52.370424 #98102] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:35:49.165454 #98111] DEBUG -- :   [1m[36m (9.5ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:35:49.167697 #98111] DEBUG -- :   [1m[35m (1.7ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:35:49.169494 #98111] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:35:49.170520 #98111] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:35:49.171944 #98111] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:35:49.172898 #98111] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:35:49.176191 #98111] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:44:09.575585 #98155] DEBUG -- :   [1m[36m (9.6ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:44:09.577551 #98155] DEBUG -- :   [1m[35m (1.5ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:44:09.579452 #98155] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:44:09.580689 #98155] DEBUG -- :   [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:44:09.581991 #98155] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:44:09.582961 #98155] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:44:09.586647 #98155] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:44:09.696413 #98155] DEBUG -- :   [1m[35m (1.1ms)[0m  DELETE FROM "companies";
+D, [2015-03-16T22:44:09.696826 #98155] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-16T22:44:09.697187 #98155] DEBUG -- :   [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-16T22:44:09.698403 #98155] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-16T22:44:09.698657 #98155] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-16T22:44:09.698892 #98155] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-16T22:44:09.699772 #98155] DEBUG -- :   [1m[35m (0.8ms)[0m  DELETE FROM "tasks";
+D, [2015-03-16T22:44:09.699972 #98155] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-16T22:44:09.700221 #98155] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-16T22:44:09.701041 #98155] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:44:09.701141 #98155] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T22:44:09.701276 #98155] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:44:09.703798 #98155] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-16T22:44:09.704692 #98155] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:44:09.704795 #98155] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T22:44:09.704987 #98155] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:44:09.706687 #98155] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-16T22:44:09.707276 #98155] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:44:09.707365 #98155] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T22:44:09.707483 #98155] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:44:09.708643 #98155] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-16T22:45:10.369476 #98164] DEBUG -- :   [1m[36m (9.9ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-16T22:45:10.371304 #98164] DEBUG -- :   [1m[35m (1.3ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-16T22:45:10.373446 #98164] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-16T22:45:10.374590 #98164] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-16T22:45:10.376001 #98164] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-16T22:45:10.376989 #98164] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-16T22:45:10.383375 #98164] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-16T22:45:10.452271 #98164] DEBUG -- :   [1m[35m (1.0ms)[0m  DELETE FROM "companies";
+D, [2015-03-16T22:45:10.452533 #98164] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-16T22:45:10.452785 #98164] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-16T22:45:10.453688 #98164] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-16T22:45:10.453873 #98164] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-16T22:45:10.454042 #98164] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-16T22:45:10.454906 #98164] DEBUG -- :   [1m[35m (0.7ms)[0m  DELETE FROM "tasks";
+D, [2015-03-16T22:45:10.455091 #98164] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-16T22:45:10.455281 #98164] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-16T22:45:10.456074 #98164] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:45:10.456185 #98164] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T22:45:10.456303 #98164] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:45:10.462950 #98164] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-16T22:45:10.463978 #98164] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:45:10.464099 #98164] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T22:45:10.464213 #98164] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:45:10.465064 #98164] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-16T22:45:10.465661 #98164] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:45:10.465766 #98164] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-16T22:45:10.465873 #98164] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-16T22:45:10.466709 #98164] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T08:58:14.703397 #98203] DEBUG -- :   [1m[36m (2.1ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T08:58:14.705158 #98203] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T08:58:14.707828 #98203] DEBUG -- :   [1m[36m (1.4ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T08:58:14.709572 #98203] DEBUG -- :   [1m[35m (1.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T08:58:14.711590 #98203] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T08:58:14.712747 #98203] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T08:58:14.719217 #98203] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T08:58:14.821687 #98203] DEBUG -- :   [1m[35m (1.1ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T08:58:14.822147 #98203] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T08:58:14.822507 #98203] DEBUG -- :   [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T08:58:14.823449 #98203] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T08:58:14.823677 #98203] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T08:58:14.823856 #98203] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T08:58:14.824558 #98203] DEBUG -- :   [1m[35m (0.6ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T08:58:14.824736 #98203] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T08:58:14.824887 #98203] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T08:58:14.825635 #98203] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:14.825720 #98203] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T08:58:14.825825 #98203] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:14.830977 #98203] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T08:58:14.832350 #98203] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:14.832564 #98203] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T08:58:14.832720 #98203] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:14.834234 #98203] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T08:58:14.835095 #98203] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:14.835321 #98203] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T08:58:14.835485 #98203] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:14.837018 #98203] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T08:58:59.741680 #98211] DEBUG -- :   [1m[36m (10.2ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T08:58:59.743065 #98211] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T08:58:59.745159 #98211] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T08:58:59.746231 #98211] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T08:58:59.747768 #98211] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T08:58:59.748693 #98211] DEBUG -- :   [1m[35m (0.7ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T08:58:59.755644 #98211] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T08:58:59.833365 #98211] DEBUG -- :   [1m[35m (1.0ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T08:58:59.833660 #98211] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T08:58:59.833902 #98211] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T08:58:59.834820 #98211] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T08:58:59.835040 #98211] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T08:58:59.835222 #98211] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T08:58:59.836122 #98211] DEBUG -- :   [1m[35m (0.8ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T08:58:59.836380 #98211] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T08:58:59.836587 #98211] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T08:58:59.837437 #98211] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:59.837550 #98211] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T08:58:59.837680 #98211] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:59.841363 #98211] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T08:58:59.842361 #98211] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:59.842475 #98211] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T08:58:59.842739 #98211] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:59.843890 #98211] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T08:58:59.844501 #98211] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:59.844590 #98211] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T08:58:59.844679 #98211] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T08:58:59.845390 #98211] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:03:02.753189 #98234] DEBUG -- :   [1m[36m (9.5ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:03:02.754682 #98234] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:03:02.756655 #98234] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:03:02.757435 #98234] DEBUG -- :   [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:03:02.758719 #98234] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:03:02.759568 #98234] DEBUG -- :   [1m[35m (0.7ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:03:02.763830 #98234] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:03:02.832982 #98234] DEBUG -- :   [1m[35m (0.9ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:03:02.833241 #98234] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:03:02.833460 #98234] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:03:02.834279 #98234] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:03:02.834491 #98234] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:03:02.834663 #98234] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:03:02.835442 #98234] DEBUG -- :   [1m[35m (0.7ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:03:02.835641 #98234] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:03:02.835806 #98234] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:03:02.836609 #98234] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:02.836701 #98234] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:03:02.836804 #98234] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:02.839767 #98234] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:03:02.840441 #98234] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:02.840574 #98234] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:03:02.840669 #98234] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:02.841188 #98234] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:03:02.841974 #98234] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:02.842076 #98234] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:03:02.842168 #98234] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:02.842899 #98234] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:03:02.843605 #98234] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:02.843740 #98234] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:03:02.843850 #98234] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:02.844000 #98234] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:03:15.041236 #98240] DEBUG -- :   [1m[36m (8.4ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:03:15.043359 #98240] DEBUG -- :   [1m[35m (1.7ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:03:15.046058 #98240] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:03:15.047113 #98240] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:03:15.048498 #98240] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:03:15.049518 #98240] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:03:15.055146 #98240] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:03:15.131895 #98240] DEBUG -- :   [1m[35m (1.1ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:03:15.132341 #98240] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:03:15.132600 #98240] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:03:15.133872 #98240] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:03:15.134406 #98240] DEBUG -- :   [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:03:15.134785 #98240] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:03:15.135871 #98240] DEBUG -- :   [1m[35m (0.9ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:03:15.136186 #98240] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:03:15.136444 #98240] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:03:15.137187 #98240] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:15.137286 #98240] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:03:15.137407 #98240] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:15.142042 #98240] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:03:15.142749 #98240] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:15.142862 #98240] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:03:15.142967 #98240] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:15.145029 #98240] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:03:15.145805 #98240] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:15.145927 #98240] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:03:15.146047 #98240] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:15.146910 #98240] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:03:15.147500 #98240] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:15.147593 #98240] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:03:15.147734 #98240] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:03:15.147907 #98240] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:29:24.006613 #98285] DEBUG -- :   [1m[36m (8.3ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:29:24.009439 #98285] DEBUG -- :   [1m[35m (1.9ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:29:24.011863 #98285] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:29:24.013738 #98285] DEBUG -- :   [1m[35m (1.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:29:24.018712 #98285] DEBUG -- :   [1m[36m (2.0ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:29:24.021534 #98285] DEBUG -- :   [1m[35m (1.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:29:24.025980 #98285] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:29:24.100278 #98285] DEBUG -- :   [1m[35m (1.1ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:29:24.100610 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:29:24.101011 #98285] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:29:24.102018 #98285] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:29:24.102228 #98285] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:29:24.102462 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:29:24.103278 #98285] DEBUG -- :   [1m[35m (0.7ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:29:24.103449 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:29:24.103663 #98285] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:29:24.104522 #98285] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:24.104642 #98285] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:29:24.104750 #98285] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:24.106971 #98285] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:29:24.112457 #98285] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:29:24.112922 #98285] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:29:24.119844 #98285] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:29:24.121644 #98285] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2015-03-17T09:29:24.121976 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:29:24.122197 #98285] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:29:24.123020 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:29:24.124698 #98285] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:29:24.125050 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:29:24.126126 #98285] DEBUG -- :   [1m[35m (0.4ms)[0m  rollback transaction
+D, [2015-03-17T09:29:24.127564 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:24.127706 #98285] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:29:24.127848 #98285] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:24.129268 #98285] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:29:24.130321 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:24.130512 #98285] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:29:24.130738 #98285] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:24.131013 #98285] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:29:48.125514 #98292] DEBUG -- :   [1m[36m (9.3ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:29:48.128038 #98292] DEBUG -- :   [1m[35m (1.5ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:29:48.130613 #98292] DEBUG -- :   [1m[36m (1.4ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:29:48.132036 #98292] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:29:48.133641 #98292] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:29:48.134712 #98292] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:29:48.140417 #98292] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:29:48.207525 #98292] DEBUG -- :   [1m[35m (1.0ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:29:48.207811 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:29:48.208014 #98292] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:29:48.208820 #98292] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:29:48.209038 #98292] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:29:48.209208 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:29:48.210000 #98292] DEBUG -- :   [1m[35m (0.7ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:29:48.210214 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:29:48.210377 #98292] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:29:48.211415 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:48.211570 #98292] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:29:48.211777 #98292] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:48.213995 #98292] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:29:48.216323 #98292] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:29:48.216599 #98292] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:29:48.221179 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:29:48.224687 #98292] DEBUG -- :   [1m[35mSQL (2.1ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:29:48.225182 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:29:48.227962 #98292] DEBUG -- :   [1m[35m (1.1ms)[0m  rollback transaction
+D, [2015-03-17T09:29:48.229299 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:48.229469 #98292] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:29:48.229571 #98292] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:48.229917 #98292] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:29:48.231470 #98292] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:29:48.231779 #98292] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:29:48.232459 #98292] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:29:48.233465 #98292] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:29:48.233681 #98292] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:29:48.234621 #98292] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:29:48.236186 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:48.236391 #98292] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:29:48.236600 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:48.237736 #98292] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:29:48.238474 #98292] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:48.238633 #98292] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:29:48.238790 #98292] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:29:48.239002 #98292] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:30:21.212147 #98301] DEBUG -- :   [1m[36m (9.0ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:30:21.214160 #98301] DEBUG -- :   [1m[35m (1.2ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:30:21.216174 #98301] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:30:21.217709 #98301] DEBUG -- :   [1m[35m (1.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:30:21.221475 #98301] DEBUG -- :   [1m[36m (2.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:30:21.222928 #98301] DEBUG -- :   [1m[35m (1.2ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:30:21.228453 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:30:21.327139 #98301] DEBUG -- :   [1m[35m (2.8ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:30:21.327609 #98301] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:30:21.327925 #98301] DEBUG -- :   [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:30:21.336170 #98301] DEBUG -- :   [1m[36m (8.0ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:30:21.336565 #98301] DEBUG -- :   [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:30:21.336876 #98301] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:30:21.338457 #98301] DEBUG -- :   [1m[35m (1.3ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:30:21.338776 #98301] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:30:21.339048 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:30:21.340059 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:30:21.340279 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:30:21.340525 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:30:21.345459 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:30:21.352281 #98301] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:30:21.352764 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:30:21.359920 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:30:21.363929 #98301] DEBUG -- :   [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:30:21.364365 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:30:21.366357 #98301] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:30:21.367869 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:30:21.368040 #98301] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:30:21.368223 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:30:21.368585 #98301] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:30:21.369536 #98301] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:30:21.369951 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:30:21.370818 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:30:21.372233 #98301] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:30:21.372589 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:30:21.373530 #98301] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:30:21.375526 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:30:21.375707 #98301] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:30:21.375893 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:30:21.376444 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:30:21.378450 #98301] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:30:21.378872 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:30:21.379815 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:30:21.382928 #98301] DEBUG -- :   [1m[35mSQL (2.1ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:30:21.383901 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:30:21.404518 #98301] DEBUG -- :   [1m[35mCompany Load (0.2ms)[0m  SELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+D, [2015-03-17T09:30:21.408612 #98301] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:30:21.410490 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:30:21.410678 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:30:21.410830 #98301] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:30:21.412115 #98301] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:30:21.412817 #98301] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:30:21.412960 #98301] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:30:21.413112 #98301] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:30:21.413317 #98301] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:31:06.905601 #98311] DEBUG -- :   [1m[36m (9.2ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:31:06.908431 #98311] DEBUG -- :   [1m[35m (1.7ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:31:06.911638 #98311] DEBUG -- :   [1m[36m (1.3ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:31:06.913164 #98311] DEBUG -- :   [1m[35m (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:31:06.915171 #98311] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:31:06.916693 #98311] DEBUG -- :   [1m[35m (1.2ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:31:06.922822 #98311] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:31:07.002988 #98311] DEBUG -- :   [1m[35m (1.1ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:31:07.003327 #98311] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:31:07.003578 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:31:07.004476 #98311] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:31:07.004721 #98311] DEBUG -- :   [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:31:07.004910 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:31:07.005768 #98311] DEBUG -- :   [1m[35m (0.8ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:31:07.005966 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:31:07.006229 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:31:07.007122 #98311] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:31:07.007230 #98311] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:31:07.007335 #98311] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:31:07.010314 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:31:07.013283 #98311] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:31:07.013645 #98311] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:31:07.018021 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:31:07.020318 #98311] DEBUG -- :   [1m[35mSQL (1.2ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:31:07.020644 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:31:07.024242 #98311] DEBUG -- :   [1m[35m (1.7ms)[0m  rollback transaction
+D, [2015-03-17T09:31:07.026132 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:31:07.026399 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:31:07.026668 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:31:07.027386 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:31:07.029021 #98311] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:31:07.029428 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:31:07.030275 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:31:07.031887 #98311] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:31:07.032278 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:31:07.033506 #98311] DEBUG -- :   [1m[35m (0.8ms)[0m  rollback transaction
+D, [2015-03-17T09:31:07.034892 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:31:07.035063 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:31:07.035259 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:31:07.035784 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:31:07.036958 #98311] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:31:07.037761 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:31:07.038510 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:31:07.040067 #98311] DEBUG -- :   [1m[35mSQL (0.8ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:31:07.040333 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:31:07.056796 #98311] DEBUG -- :   [1m[35mCompany Load (0.2ms)[0m  SELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+D, [2015-03-17T09:31:07.060154 #98311] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:31:07.061740 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:31:07.061944 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:31:07.062356 #98311] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2015-03-17T09:31:07.063584 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:31:07.064818 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:31:07.064975 #98311] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:31:07.065131 #98311] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:31:07.065360 #98311] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:35:39.355065 #98342] DEBUG -- :   [1m[36m (9.2ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:35:39.357293 #98342] DEBUG -- :   [1m[35m (1.7ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:35:39.358785 #98342] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:35:39.359675 #98342] DEBUG -- :   [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:35:39.360935 #98342] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:35:39.361806 #98342] DEBUG -- :   [1m[35m (0.7ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:35:39.366218 #98342] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:35:39.442914 #98342] DEBUG -- :   [1m[35m (1.1ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:35:39.443406 #98342] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:35:39.443762 #98342] DEBUG -- :   [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:35:39.444804 #98342] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:35:39.445287 #98342] DEBUG -- :   [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:35:39.445600 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:35:39.446538 #98342] DEBUG -- :   [1m[35m (0.8ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:35:39.446873 #98342] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:35:39.447157 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:35:39.448605 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.448831 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:35:39.449028 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.451909 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.454712 #98342] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:35:39.455018 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.456687 #98342] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:35:39.457488 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:35:39.457606 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:35:39.457697 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:35:39.458012 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.458728 #98342] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:35:39.458932 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.465400 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.467526 #98342] DEBUG -- :   [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:35:39.467780 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.468673 #98342] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:35:39.469649 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:35:39.469804 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:35:39.469944 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:35:39.470293 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.470997 #98342] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:35:39.471382 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.472036 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.472978 #98342] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:35:39.473165 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.479643 #98342] DEBUG -- :   [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:35:39.483502 #98342] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:35:39.484892 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.485098 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:35:39.485296 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.485727 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.486470 #98342] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:35:39.486668 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.487156 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.487981 #98342] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:35:39.488227 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.501148 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.502304 #98342] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task1"], ["user_id", 1]]
+D, [2015-03-17T09:35:39.503843 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.505750 #98342] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:35:39.506871 #98342] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:35:39.508007 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.508223 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:35:39.508717 #98342] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.509385 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.510633 #98342] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:35:39.511617 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.512973 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.514275 #98342] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:35:39.514772 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.516549 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.517950 #98342] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task2"], ["user_id", 1]]
+D, [2015-03-17T09:35:39.518301 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.519227 #98342] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:35:39.520315 #98342] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:35:39.521859 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.522403 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:35:39.522680 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.523322 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.525036 #98342] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:35:39.525439 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.527189 #98342] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.528370 #98342] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:35:39.528606 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:35:39.529349 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.530109 #98342] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task3"], ["user_id", 1]]
+D, [2015-03-17T09:35:39.530319 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:35:39.531009 #98342] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:35:39.532160 #98342] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:35:39.533365 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.533535 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:35:39.533723 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.534939 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:35:39.535737 #98342] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.535888 #98342] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:35:39.536075 #98342] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:35:39.536270 #98342] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:38:04.727861 #98360] DEBUG -- :   [1m[36m (8.1ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:38:04.729814 #98360] DEBUG -- :   [1m[35m (1.5ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:38:04.732689 #98360] DEBUG -- :   [1m[36m (1.5ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:38:04.733799 #98360] DEBUG -- :   [1m[35m (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:38:04.735142 #98360] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:38:04.736170 #98360] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:38:04.739761 #98360] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:38:04.816001 #98360] DEBUG -- :   [1m[35m (1.1ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:38:04.816430 #98360] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:38:04.816691 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:38:04.817564 #98360] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:38:04.817784 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:38:04.818054 #98360] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:38:04.819067 #98360] DEBUG -- :   [1m[35m (0.9ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:38:04.819281 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:38:04.819468 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:38:04.820381 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.820505 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:38:04.820684 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.823228 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.825917 #98360] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:38:04.826213 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.828153 #98360] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:38:04.829006 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:38:04.829125 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:38:04.829245 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:38:04.829598 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.830360 #98360] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:38:04.830576 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.836523 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.838878 #98360] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:38:04.839126 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.840006 #98360] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:38:04.841058 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:38:04.841241 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:38:04.841432 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:38:04.841868 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.842694 #98360] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:38:04.842926 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.844315 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.845426 #98360] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:38:04.845710 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.857850 #98360] DEBUG -- :   [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:38:04.863357 #98360] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:38:04.864585 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.864778 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:38:04.864904 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.865254 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.866127 #98360] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:38:04.866449 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.867319 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.868475 #98360] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:38:04.868678 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.883846 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.885121 #98360] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task1"], ["user_id", 1]]
+D, [2015-03-17T09:38:04.885367 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.886438 #98360] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:38:04.887443 #98360] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:38:04.888480 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.888668 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:38:04.888974 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.889318 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.890348 #98360] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:38:04.890548 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.891129 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.892150 #98360] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:38:04.892442 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.893872 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.895150 #98360] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task2"], ["user_id", 1]]
+D, [2015-03-17T09:38:04.895454 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.896329 #98360] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:38:04.897940 #98360] DEBUG -- :   [1m[35m (1.2ms)[0m  rollback transaction
+D, [2015-03-17T09:38:04.898949 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.899111 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:38:04.899271 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.899761 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.901693 #98360] DEBUG -- :   [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:38:04.902111 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.903085 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.904194 #98360] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:38:04.904397 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.904943 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.905562 #98360] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task3"], ["user_id", 1]]
+D, [2015-03-17T09:38:04.905727 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.906332 #98360] DEBUG -- :   [1m[36mCompany Load (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:38:04.907366 #98360] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:38:04.908285 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.908467 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:38:04.908637 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.909324 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.910516 #98360] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:38:04.911003 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.911972 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.913592 #98360] DEBUG -- :   [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:38:04.913950 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.914428 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:38:04.935192 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:38:04.936676 #98360] DEBUG -- :   [1m[35m (0.8ms)[0m  rollback transaction
+D, [2015-03-17T09:38:04.938324 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.938434 #98360] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:38:04.938533 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.939802 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:38:04.941063 #98360] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.941228 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:38:04.941373 #98360] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:38:04.941638 #98360] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:48:00.043292 #98451] DEBUG -- :   [1m[36m (9.1ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:48:00.045415 #98451] DEBUG -- :   [1m[35m (1.5ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:48:00.046935 #98451] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:48:00.047906 #98451] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:48:00.049146 #98451] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:48:00.050069 #98451] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:48:00.053536 #98451] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:48:00.127252 #98451] DEBUG -- :   [1m[35m (0.9ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:48:00.127540 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:48:00.127737 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:48:00.128478 #98451] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:48:00.128661 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:48:00.128813 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:48:00.129564 #98451] DEBUG -- :   [1m[35m (0.7ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:48:00.129750 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:48:00.129912 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:48:00.130661 #98451] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.130785 #98451] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:48:00.130907 #98451] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.132952 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.135294 #98451] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:48:00.135544 #98451] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.137092 #98451] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:48:00.137910 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:48:00.144210 #98451] DEBUG -- :   [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:48:00.144453 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:48:00.145313 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.146719 #98451] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:48:00.146994 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.151642 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.153601 #98451] DEBUG -- :   [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:48:00.153848 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.154702 #98451] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:48:00.156239 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:48:00.156421 #98451] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:48:00.156544 #98451] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:48:00.156955 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.157941 #98451] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:48:00.158273 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.159092 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.160341 #98451] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:48:00.160629 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.172383 #98451] DEBUG -- :   [1m[36mCompany Load (0.2ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:48:00.178191 #98451] DEBUG -- :   [1m[35m (1.2ms)[0m  rollback transaction
+D, [2015-03-17T09:48:00.179552 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.179691 #98451] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:48:00.179792 #98451] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.180106 #98451] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.180889 #98451] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:48:00.181209 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.182061 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.183229 #98451] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:48:00.183434 #98451] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.188075 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.190061 #98451] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task1"], ["user_id", 1]]
+D, [2015-03-17T09:48:00.190338 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.192419 #98451] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:48:00.193500 #98451] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:48:00.194426 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.194609 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:48:00.194786 #98451] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.195252 #98451] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.197604 #98451] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:48:00.197980 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.198904 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.200098 #98451] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:48:00.200385 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.201206 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.202283 #98451] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task2"], ["user_id", 1]]
+D, [2015-03-17T09:48:00.202600 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.203555 #98451] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:48:00.204777 #98451] DEBUG -- :   [1m[35m (0.9ms)[0m  rollback transaction
+D, [2015-03-17T09:48:00.208119 #98451] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.208515 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:48:00.208845 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.209402 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.210520 #98451] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:48:00.210812 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.211690 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.212951 #98451] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:48:00.213252 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.214209 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.215576 #98451] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task3"], ["user_id", 1]]
+D, [2015-03-17T09:48:00.215989 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.216870 #98451] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:48:00.217924 #98451] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:48:00.219060 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.219213 #98451] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:48:00.219439 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.219905 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.220923 #98451] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:48:00.222842 #98451] DEBUG -- :   [1m[35m (0.9ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.224307 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.225735 #98451] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:48:00.226517 #98451] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.227479 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:48:00.242391 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:48:00.244191 #98451] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:48:00.245826 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.246005 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:48:00.246180 #98451] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.247347 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:48:00.248148 #98451] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.248311 #98451] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:48:00.248469 #98451] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:48:00.248671 #98451] DEBUG -- :   [1m[35m (0.0ms)[0m  rollback transaction
+D, [2015-03-17T09:49:14.047780 #98464] DEBUG -- :   [1m[36m (9.6ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:49:14.049755 #98464] DEBUG -- :   [1m[35m (1.5ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:49:14.051622 #98464] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:49:14.052817 #98464] DEBUG -- :   [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:49:14.054367 #98464] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:49:14.055371 #98464] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:49:14.059295 #98464] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:49:14.140826 #98464] DEBUG -- :   [1m[35m (1.1ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:49:14.141296 #98464] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:49:14.141633 #98464] DEBUG -- :   [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:49:14.142535 #98464] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:49:14.142748 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:49:14.142931 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:49:14.144773 #98464] DEBUG -- :   [1m[35m (1.7ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:49:14.145127 #98464] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:49:14.145425 #98464] DEBUG -- :   [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:49:14.146501 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.146683 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:49:14.146804 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.149996 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.153812 #98464] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:49:14.154243 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.163150 #98464] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:49:14.164456 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:49:14.164735 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:49:14.164909 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:49:14.165431 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.166614 #98464] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:49:14.166836 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.171039 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.172924 #98464] DEBUG -- :   [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:49:14.173237 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.174129 #98464] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:49:14.175320 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:49:14.175464 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:49:14.175582 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:49:14.175948 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.176933 #98464] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:49:14.177279 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.177969 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.178808 #98464] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:49:14.178993 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.186681 #98464] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:49:14.192000 #98464] DEBUG -- :   [1m[35m (1.7ms)[0m  rollback transaction
+D, [2015-03-17T09:49:14.193272 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.193434 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:49:14.193576 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.194121 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.195326 #98464] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:49:14.195659 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.196591 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.198025 #98464] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:49:14.198426 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.205536 #98464] DEBUG -- :   [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.206904 #98464] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task1"], ["user_id", 1]]
+D, [2015-03-17T09:49:14.207137 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.208390 #98464] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:49:14.211174 #98464] DEBUG -- :   [1m[35m (2.3ms)[0m  rollback transaction
+D, [2015-03-17T09:49:14.213413 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.213633 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:49:14.213857 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.214466 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.216020 #98464] DEBUG -- :   [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:49:14.216748 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.217816 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.219373 #98464] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:49:14.219823 #98464] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.220791 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.222333 #98464] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task2"], ["user_id", 1]]
+D, [2015-03-17T09:49:14.222791 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.223890 #98464] DEBUG -- :   [1m[36mCompany Load (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:49:14.224902 #98464] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:49:14.225923 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.226072 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:49:14.226322 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.226787 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.227890 #98464] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:49:14.228181 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.230714 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.232334 #98464] DEBUG -- :   [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:49:14.232674 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.233620 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.234909 #98464] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task3"], ["user_id", 1]]
+D, [2015-03-17T09:49:14.235193 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.235866 #98464] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:49:14.236680 #98464] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:49:14.237618 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.237788 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:49:14.237932 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.238372 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.239494 #98464] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:49:14.239802 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.240548 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.244289 #98464] DEBUG -- :   [1m[35mSQL (2.3ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:49:14.244908 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.245366 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.257182 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.259138 #98464] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:49:14.260766 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.260980 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:49:14.261153 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:49:14.261767 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.262714 #98464] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:49:14.262941 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.263568 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.264410 #98464] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:49:14.264612 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.265197 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.265910 #98464] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task1"], ["user_id", 1]]
+D, [2015-03-17T09:49:14.266084 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.266245 #98464] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:49:14.267226 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+D, [2015-03-17T09:49:14.269386 #98464] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:49:14.270804 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:49:14.270995 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:49:14.271165 #98464] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:49:14.272487 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:49:14.274066 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:49:14.274327 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:49:14.274725 #98464] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:49:14.275044 #98464] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:53:45.773178 #98489] DEBUG -- :   [1m[36m (8.5ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:53:45.775903 #98489] DEBUG -- :   [1m[35m (2.2ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:53:45.778735 #98489] DEBUG -- :   [1m[36m (1.1ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:53:45.779827 #98489] DEBUG -- :   [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:53:45.781013 #98489] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:53:45.781796 #98489] DEBUG -- :   [1m[35m (0.6ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:53:45.785731 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:53:45.866908 #98489] DEBUG -- :   [1m[35m (1.0ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:53:45.867204 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:53:45.867416 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:53:45.868282 #98489] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:53:45.868484 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:53:45.868652 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:53:45.869452 #98489] DEBUG -- :   [1m[35m (0.7ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:53:45.869682 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:53:45.869884 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:53:45.870698 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.870791 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.870908 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.873805 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.884603 #98489] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.885047 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.885496 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.887217 #98489] DEBUG -- :   [1m[35mSQL (1.1ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.887591 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.888551 #98489] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.890070 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.890281 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.890434 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.890840 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.892020 #98489] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.892419 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.892820 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.894744 #98489] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.895345 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.896726 #98489] DEBUG -- :   [1m[35m (0.9ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.898769 #98489] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.899014 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.899177 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.899552 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.900405 #98489] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.900649 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.900904 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.901679 #98489] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.901878 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.902729 #98489] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.903580 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.903763 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.903891 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.904275 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.905250 #98489] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.905910 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.906334 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.907464 #98489] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.907763 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.908562 #98489] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.909552 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.909677 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.909799 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.910080 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.910839 #98489] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.911048 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.911274 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.912028 #98489] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.912250 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.913174 #98489] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.914054 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.914187 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.914333 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.914706 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.916191 #98489] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.916488 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.916815 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.919740 #98489] DEBUG -- :   [1m[35mSQL (0.9ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.920131 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.921072 #98489] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.922389 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.922564 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.922787 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.923483 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.924598 #98489] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.925108 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.925707 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.927643 #98489] DEBUG -- :   [1m[35mSQL (0.9ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.928485 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.929571 #98489] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.930638 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.930790 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.930971 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.931361 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.932341 #98489] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.932622 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.932944 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.933933 #98489] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.934251 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.935494 #98489] DEBUG -- :   [1m[35m (0.9ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.936537 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.936702 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.936878 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.937298 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.938397 #98489] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:53:45.938715 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:53:45.939068 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.940059 #98489] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:53:45.940320 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:53:45.941202 #98489] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.942313 #98489] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.942457 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.942597 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.944153 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:53:45.944666 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.944780 #98489] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:53:45.944869 #98489] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:53:45.945088 #98489] DEBUG -- :   [1m[35m (0.1ms)[0m  rollback transaction
+D, [2015-03-17T09:54:02.593839 #98496] DEBUG -- :   [1m[36m (8.2ms)[0m  [1mDROP TABLE "companies"[0m
+D, [2015-03-17T09:54:02.596864 #98496] DEBUG -- :   [1m[35m (2.6ms)[0m  CREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "company_name" varchar(255)) 
+D, [2015-03-17T09:54:02.599665 #98496] DEBUG -- :   [1m[36m (1.0ms)[0m  [1mDROP TABLE "users"[0m
+D, [2015-03-17T09:54:02.601867 #98496] DEBUG -- :   [1m[35m (1.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_name" varchar(255), "company_id" integer) 
+D, [2015-03-17T09:54:02.603463 #98496] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mDROP TABLE "tasks"[0m
+D, [2015-03-17T09:54:02.604690 #98496] DEBUG -- :   [1m[35m (1.0ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "company_id" integer, "user_id" integer, "completed" boolean) 
+D, [2015-03-17T09:54:02.610552 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+D, [2015-03-17T09:54:02.687689 #98496] DEBUG -- :   [1m[35m (0.9ms)[0m  DELETE FROM "companies";
+D, [2015-03-17T09:54:02.687963 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:54:02.688175 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'companies';
+D, [2015-03-17T09:54:02.688907 #98496] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mDELETE FROM "users";[0m
+D, [2015-03-17T09:54:02.689086 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2015-03-17T09:54:02.689234 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'users';[0m
+D, [2015-03-17T09:54:02.689910 #98496] DEBUG -- :   [1m[35m (0.6ms)[0m  DELETE FROM "tasks";
+D, [2015-03-17T09:54:02.690111 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2015-03-17T09:54:02.690259 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'tasks';
+D, [2015-03-17T09:54:02.691075 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:54:02.691189 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:54:02.691330 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:54:02.693474 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.702749 #98496] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.703176 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.703716 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.705551 #98496] DEBUG -- :   [1m[35mSQL (1.0ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.706021 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.708264 #98496] DEBUG -- :   [1m[35m (0.6ms)[0m  rollback transaction
+D, [2015-03-17T09:54:02.710372 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:54:02.710634 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2015-03-17T09:54:02.710880 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:54:02.711511 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.713356 #98496] DEBUG -- :   [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.713712 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.713991 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.714741 #98496] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.714930 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.719762 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.720995 #98496] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:54:02.721287 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.722165 #98496] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:54:02.723879 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.724299 #98496] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:54:02.724644 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.725260 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.726291 #98496] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.726572 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.726903 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.727715 #98496] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.728009 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.728716 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.729522 #98496] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:54:02.729774 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.740786 #98496] DEBUG -- :   [1m[35mCompany Load (0.1ms)[0m  SELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+D, [2015-03-17T09:54:02.744272 #98496] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:54:02.745516 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.745665 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:54:02.745811 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.746233 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.747375 #98496] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.747668 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.749550 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.750992 #98496] DEBUG -- :   [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.751493 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.752416 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.753418 #98496] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:54:02.753697 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.760171 #98496] DEBUG -- :   [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.762264 #98496] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task1"], ["user_id", 1]]
+D, [2015-03-17T09:54:02.762550 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.763674 #98496] DEBUG -- :   [1m[36mCompany Load (0.0ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:54:02.764740 #98496] DEBUG -- :   [1m[35m (0.8ms)[0m  rollback transaction
+D, [2015-03-17T09:54:02.765711 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:54:02.765889 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:54:02.766051 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:54:02.766397 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.767168 #98496] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.767403 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.767617 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.768368 #98496] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.768536 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.769049 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.769644 #98496] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:54:02.769828 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.770345 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.770970 #98496] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)  [["company_id", 1], ["completed", "f"], ["name", "Task2"], ["user_id", 1]]
+D, [2015-03-17T09:54:02.771131 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.771576 #98496] DEBUG -- :   [1m[35mCompany Load (0.0ms)[0m  SELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1  [["id", 1]]
+D, [2015-03-17T09:54:02.772426 #98496] DEBUG -- :   [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:54:02.773149 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.773247 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:54:02.773402 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.773691 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.774432 #98496] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.774708 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.775028 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.776131 #98496] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.776523 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.777499 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.778703 #98496] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:54:02.779027 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.779873 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.781084 #98496] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task3"], ["user_id", 1]]
+D, [2015-03-17T09:54:02.781436 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.782431 #98496] DEBUG -- :   [1m[36mCompany Load (0.1ms)[0m  [1mSELECT  "companies".* FROM "companies"  WHERE "companies"."id" = ? LIMIT 1[0m  [["id", 1]]
+D, [2015-03-17T09:54:02.783476 #98496] DEBUG -- :   [1m[35m (0.7ms)[0m  rollback transaction
+D, [2015-03-17T09:54:02.784970 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:54:02.785095 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  commit transaction
+D, [2015-03-17T09:54:02.785218 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+D, [2015-03-17T09:54:02.785561 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.786741 #98496] DEBUG -- :   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.787182 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.787603 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.789538 #98496] DEBUG -- :   [1m[35mSQL (0.7ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.789972 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.791260 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.792443 #98496] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)[0m  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:54:02.792756 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.793047 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.805526 #98496] DEBUG -- :   [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.809647 #98496] DEBUG -- :   [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:54:02.811965 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.812195 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:54:02.812387 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.813027 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.814267 #98496] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.814621 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.814940 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.815928 #98496] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.816295 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.817174 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.818100 #98496] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("company_id", "user_name") VALUES (?, ?)  [["company_id", 1], ["user_name", "joe_blogs"]]
+D, [2015-03-17T09:54:02.818342 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.819108 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.820223 #98496] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("company_id", "completed", "name", "user_id") VALUES (?, ?, ?, ?)[0m  [["company_id", 1], ["completed", "f"], ["name", "Task1"], ["user_id", 1]]
+D, [2015-03-17T09:54:02.820490 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.820727 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.824405 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.826769 #98496] DEBUG -- :   [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:54:02.827957 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.828112 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:54:02.828245 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.828671 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.830171 #98496] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "companies" ("company_name") VALUES (?)  [["company_name", "DEFAULT"]]
+D, [2015-03-17T09:54:02.830536 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.832962 #98496] DEBUG -- :   [1m[35m (2.1ms)[0m  SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.834242 #98496] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "companies" ("company_name") VALUES (?)[0m  [["company_name", "SECOND"]]
+D, [2015-03-17T09:54:02.834611 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.835508 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2015-03-17T09:54:02.836697 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+D, [2015-03-17T09:54:02.840534 #98496] DEBUG -- :   [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:54:02.841452 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.841734 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:54:02.841908 #98496] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.843002 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2015-03-17T09:54:02.843632 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.843803 #98496] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2015-03-17T09:54:02.843952 #98496] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-03-17T09:54:02.844152 #98496] DEBUG -- :   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
