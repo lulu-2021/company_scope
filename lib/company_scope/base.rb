@@ -1,4 +1,3 @@
-require "company_scope/version"
 #
 module CompanyScope
   #
