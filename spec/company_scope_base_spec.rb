@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'active_record_models'
+require 'company_scope/control'
 #
 describe CompanyScope::Base do
   #
@@ -42,5 +43,18 @@ describe CompanyScope::Base do
     Given(:test_user) { User.new(user_name: 'jack_black') }
     When { test_user.save }
     Then { expect(test_user).to have(1).errors_on(:company_id) }
+  end
+
+  context 'should raise an Error during an attempt to set the company to the wrong value' do
+    Given(:company_id) { 2 }
+    Given(:wrong_company_id) { 999 }
+    Given { Company.current_id = company_id }
+    Given!(:test_user) { User.create(user_name: 'wrong_user_test') }
+    When { Company.current_id = wrong_company_id } # i.e. something out of the range..
+
+    Then {
+      expect(lambda { test_user.save }).to raise_error('CompanyScope::Control::CompanyAccessViolationError')
+      expect(test_user.company_id).to eq company_id
+    }
   end
 end
