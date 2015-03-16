@@ -1,14 +1,14 @@
 #
 module CompanyScope
   #
-  module ControllerFilter
+  module Filter
     #
     def self.included(base)
-      base.extend(ControllerClassMethods)
-      base.extend(ControllerFilterClassMethods)
+      base.extend(TopLevelClassMethods)
+      base.extend(FilterClassMethods)
     end
 
-    module ControllerFilterClassMethods
+    module FilterClassMethods
       #
       def acts_as_company_filter
         around_filter :filter_by_current_company_scope
@@ -22,7 +22,7 @@ module CompanyScope
       end
     end
 
-    module ControllerClassMethods
+    module TopLevelClassMethods
       # - rescue from errors relating to the wrong company to avoid cross company data leakage
       rescue_from CompanyScope::Control::CompanyAccessViolationError, with: :company_scope_company_not_set
 

@@ -1,13 +1,13 @@
 #
 module CompanyScope
   #
-  module CompanyEntity
+  module Guardian
     #
     def self.included(base)
-      base.extend(CompanyEntityClassMethods)
+      base.extend(GuardianClassMethods)
     end
     #
-    module CompanyEntityClassMethods
+    module GuardianClassMethods
       #
       def acts_as_guardian
         #
