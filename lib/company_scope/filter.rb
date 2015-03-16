@@ -21,10 +21,13 @@ module CompanyScope
         Company.current_id = nil
       end
     end
-
+    #
     module TopLevelClassMethods
-      # - rescue from errors relating to the wrong company to avoid cross company data leakage
-      rescue_from CompanyScope::Control::CompanyAccessViolationError, with: :company_scope_company_not_set
+      #
+      def rescue_from_company_access_violations
+        # - rescue from errors relating to the wrong company to avoid cross company data leakage
+        rescue_from ::CompanyScope::Control::CompanyAccessViolationError, with: :company_scope_company_not_set
+      end
 
       def company_scope_company_not_set
         flash[:error] = t('application.warnings.company_not_set')
