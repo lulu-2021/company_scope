@@ -3,7 +3,7 @@ module CompanyScope
     class CompanyAccessViolationError < SecurityError; end
 
     # - rescue from errors relating to the wrong company to avoid cross company data leakage
-    rescue_from CompanyScope::Controler::CompanyAccessViolationError, with: :company_scope_company_not_set
+    rescue_from CompanyScope::Control::CompanyAccessViolationError, with: :company_scope_company_not_set
 
     def company_scope_company_not_set
       flash[:error] = t('application.warnings.company_not_set')
