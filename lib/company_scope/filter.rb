@@ -14,7 +14,7 @@ module CompanyScope
         around_filter :filter_by_current_company_scope
       end
 
-      def filter_by_current_company_scope
+      def self.filter_by_current_company_scope
         Company.current_id = current_company.id
         yield
       ensure
