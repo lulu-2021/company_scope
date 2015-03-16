@@ -1,3 +1,5 @@
 require File.dirname(__FILE__) + '/company_scope/base'
+require File.dirname(__FILE__) + '/company_scope/guardian'
 require File.dirname(__FILE__) + '/company_scope/control'
+require File.dirname(__FILE__) + '/company_scope/filter'
 require File.dirname(__FILE__) + '/company_scope/railtie'
