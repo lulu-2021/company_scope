@@ -138,7 +138,7 @@ describe CompanyScope::Base do
     }
   end
 
-  context 'testing the data' do
+  context 'inspecting the data' do
     Then {
       #Company.all.each { |c| puts "Company: #{c.inspect}\n" }
       #User.all.each { |u| puts "User: #{u.inspect}\n" }
