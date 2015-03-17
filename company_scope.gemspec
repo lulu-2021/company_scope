@@ -21,12 +21,14 @@ Gem::Specification.new do |spec|
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
-
+  #
+  # Development dependencies
+  #
+  # - build related ones
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
   #
-  # Gem specific dependencies
-  #
+  # - gem related ones
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-given'
   spec.add_development_dependency 'rspec-collection_matchers'
@@ -35,4 +37,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'database_cleaner', '~> 1.3.0'
   spec.add_development_dependency 'sqlite3'
+  #
+  # Runtime dependencies
+  #
+  spec.add_runtime_dependency 'rails', '~> 4.1.1'
+  spec.add_runtime_dependency 'request_store'
+  #
 end
