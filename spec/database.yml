@@ -1,3 +1,8 @@
 sqlite:
   adapter: sqlite3
-  database: spec/company_scope_test.sqlite3
+  encoding: utf8
+  pool: 5
+  timeout: 5000
+  database: ":memory:"
+  verbosity: quiet
+  #database: spec/company_scope_test.sqlite3
