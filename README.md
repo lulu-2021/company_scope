@@ -7,6 +7,8 @@ Since the whole process needs a thread_safe way to store the current company ide
 
 Thread.current is the usual way to handle this but this is not entirely compatible with all ruby application servers - especially the Java based ones. RequestStore is the solution that works in all such application servers.
 
+## Travis CI
+
 
 ## Installation
 
