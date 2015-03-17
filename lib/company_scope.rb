@@ -17,8 +17,8 @@ if defined?(ActionController::Base)
 end
 # - if this is being used in an API..
 if defined?(ActionController::API)
-  ActionController::Base.send(:include, CompanyScope::Control)
-  ActionController::Base.send(:include, CompanyScope::Filter)
+  ActionController::API.send(:include, CompanyScope::Control)
+  ActionController::API.send(:include, CompanyScope::Filter)
 end
 
 module CompanyScope
