@@ -1,8 +1,12 @@
 # CompanyScope
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/company_scope`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a simple solution to scoping a rails project for multi-tenancy. It is based on the default_scope
+in Active Record. Currently it uses a fixed model called company for the account/scoping.
 
-TODO: Delete this and the text above, and describe your gem
+Since the whole process needs a thread_safe way to store the current company identifier (such as a subdomain) as a class attribute, the gem uses the RequestStore gem to store this value.
+
+Thread.current is the usual way to handle this but this is not entirely compatible with all ruby application servers - especially the Java based ones. RequestStore is the solution that works in all such application servers.
+
 
 ## Installation
 
