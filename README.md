@@ -9,6 +9,7 @@ Thread.current is the usual way to handle this but this is not entirely compatib
 
 ## Travis CI
 
+[![Build Status](https://travis-ci.org/netflakes/company_scope.svg?branch=master)](https://travis-ci.org/netflakes/company_scope)
 
 ## Installation
 
