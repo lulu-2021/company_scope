@@ -32,7 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-given'
   spec.add_development_dependency 'rspec-collection_matchers'
-  spec.add_development_dependency 'request_store'
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'database_cleaner', '>= 1.3.0'
   spec.add_development_dependency 'sqlite3'
@@ -40,6 +39,6 @@ Gem::Specification.new do |spec|
   # Runtime dependencies
   #
   spec.add_runtime_dependency 'rails', '>= 4.1.1'
-  spec.add_runtime_dependency 'request_store'
+  spec.add_runtime_dependency 'request_store', '>= 1.1.0'
   #
 end
