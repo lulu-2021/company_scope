@@ -29,10 +29,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   #
   # - gem related ones
+  spec.add_development_dependency 'rails', '>= 4.1.1'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-given'
   spec.add_development_dependency 'rspec-collection_matchers'
-  spec.add_development_dependency 'rails', '>= 4.1.1'
   spec.add_development_dependency 'request_store'
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'database_cleaner', '>= 1.3.0'
