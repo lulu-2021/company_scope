@@ -1,7 +1,5 @@
 require 'spec_helper'
 require 'active_record_models'
-require 'company_scope/control'
-require 'request_store'
 #
 describe CompanyScope::Base do
   #
