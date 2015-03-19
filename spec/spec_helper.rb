@@ -11,14 +11,6 @@ require 'active_record_helper'
 #
 require 'company_scope'
 #
-RSpec.configure do |config|
-  config.after(:each) do
-    # do stuff here if needed
-  end
-
-  config.infer_base_class_for_anonymous_controllers = true
-end
-
 # Setup a test app
 module TestApp
   class Application < Rails::Application; end

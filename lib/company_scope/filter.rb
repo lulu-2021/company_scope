@@ -10,24 +10,33 @@ module CompanyScope
     end
 
     module FilterMethods
-      
+
       def current_company
         request.env["COMPANY_ID"] # a default that is best overridden in the application controller..
       end
-        
+
       def filter_by_current_company_scope
-        Company.current_id = current_company.id
+        #Company.current_id = current_company.id
+        scope_class.current_id = current_company.id
         yield
       ensure
-        Company.current_id = nil
+        #Company.current_id = nil
+        scope_class.current_id = nil
       end
     end
 
     module FilterClassMethods
       #
+      def set_scoping_class(scope_model = :company)
+        self.class_eval do
+          cattr_accessor :scope_class
+        end
+        self.scope_class = scope_model.to_s.camelcase.constantize
+      end
+      #
       def company_setup
         helper_method :current_company
-      end        
+      end
       #
       def acts_as_company_filter
         around_filter :filter_by_current_company_scope

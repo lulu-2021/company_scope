@@ -4,6 +4,7 @@ require 'company_scope'
 class DummyApplicationController < ActionController::Base
   include Rails.application.routes.url_helpers
   company_setup # - inject the setup
+  set_scoping_class :my_company # - symbol of the scoping class (defaults to :company)
 end
 #
 describe DummyApplicationController, type: :controller do
@@ -13,7 +14,7 @@ describe DummyApplicationController, type: :controller do
 
     def index # - the response gives us the id that was injected by the company_scope gem!
       render json: {
-        company_id: "#{Company.current_id}",
+        my_company_id: "#{MyCompany.current_id}",
       }, status: 200
     end
   end
@@ -22,7 +23,7 @@ describe DummyApplicationController, type: :controller do
     #
     Given!(:default_company_name) { 'DEFAULT' }
     Given!(:test_company) {
-      company = Company.create(company_name: default_company_name )
+      company = MyCompany.create(company_name: default_company_name )
       request.env["COMPANY_ID"] = company
       company
     }
@@ -30,6 +31,6 @@ describe DummyApplicationController, type: :controller do
     When { get :index }
     #
     Then { expect(response.status).to eq 200 }
-    Then { expect(JSON.parse(response.body)['company_id']).to eq test_company.id.to_s }
+    Then { expect(JSON.parse(response.body)['my_company_id']).to eq test_company.id.to_s }
   end
 end

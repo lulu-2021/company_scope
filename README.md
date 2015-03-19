@@ -29,8 +29,33 @@ Or install it yourself as:
 
 ## Usage
 
-NB: This gem is currently under development and has not been published officially!
-(use at your own risk..)
+Getting started
+===============
+There are two steps in adding multi-tenancy/company to your app with company_scope:
+
+1. setting the current tenant and
+2. scoping your models.
+
+Setting the current tenant
+--------------------------
+There are three ways to set the current tenant:
+
+1. by using the subdomain to lookup the current tenant,
+2. by setting  the current tenant in the controller, and
+3. by setting the current tenant for a block.
+
+### Use the subdomain to lookup the current tenant ###
+
+```ruby
+class ApplicationController < ActionController::Base
+  set_current_tenant_by_subdomain(:account, :subdomain)
+end
+```
+
+
+
+
+
 
 ## Development
 
