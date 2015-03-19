@@ -31,30 +31,99 @@ Or install it yourself as:
 
 Getting started
 ===============
-There are two steps in adding multi-tenancy/company to your app with company_scope:
+There are three main steps in adding multi-tenancy/company to your app with company_scope:
 
-1. setting the current tenant and
-2. scoping your models.
+1. Decide on a process of determining the company/account. Such as using the sub-domain.
+2. Setting the current company and controller based setup.
+3. Scoping your models.
 
-Setting the current tenant
---------------------------
-There are three ways to set the current tenant:
 
-1. by using the subdomain to lookup the current tenant,
-2. by setting  the current tenant in the controller, and
-3. by setting the current tenant for a block.
+### Decide on a process of determining the company/account ###
 
-### Use the subdomain to lookup the current tenant ###
+In the current version a helper_method called "current_company" is made added to the ApplicationController,
+or which one you add the "company_setup" method to. This means the instance of "Company" needs to have been
+set into the 'request.env' - see the snippet below. One way of doing this is s
 
 ```ruby
-class ApplicationController < ActionController::Base
-  set_current_tenant_by_subdomain(:account, :subdomain)
+def current_company
+  request.env["COMPANY_ID"]
+end
+```
+An example of this is to use "Rack Middleware" - see the method excerpt below:
+
+```ruby
+def call(env)
+  request = Rack::Request.new(env)
+  domain = request.host.split('.').first.upcase
+  env["COMPANY_ID"] = your_custom_method_to_retrieve_company_from_subdomain(domain)
+  response = @app.call(env)
+  response
 end
 ```
 
+### Setting the current company and controller based setup ###
+
+```ruby
+class ApplicationController < ActionController::Base
+
+  company_setup
+
+  set_scoping_class :company
+
+  acts_as_company_filter
+
+end
+```
+
+The three methods need to be added to the Rails Controllers. For small systems they
+will typically be added to the ApplicationController. However they can be split into
+child-controllers dependent on the layout of the application.
+
+All Controllers that inherit from the Controller that implements the "acts_as_company_filter"
+will have an around filter applied that set the Company class attribute required for the scoping
+process.
+
+The "company_setup" method adds some helper methods that are available to all child controllers.
+
+* company_setup
+* set_scoping_class :company
+* acts_as_company_filter
+
+The "set_scoping_class :company" method tells CompanyScope that we have a model called Company.
+This defaults to a model called Company but can be anything of your choosing such as Account. Each
+Model that is scoped by the Company needs to have the company_id column.
+
+The "CompanyScope" gem does not handle the process of adding migrations or changes to the DB.
 
 
+### Scoping your models ###
 
+* The Company class is the scoping model. The "acts_as_guardian" method injects the behaviour
+required by the scoping model.
+
+```ruby
+class Company < ActiveRecord::Base
+
+  acts_as_guardian
+
+  has_many :users
+end
+```
+
+* Each class to be scoped needs to have the "acts_as_company :account" method. The parameter ":account"
+defaults to :company if left blank. This can be any class/name of your choosing - the parameter needs
+to be a underscored version of the Class name as a symbol.
+
+```ruby
+class User < ActiveRecord::Base
+
+  acts_as_company :account  # Defaults to :company if left blank!
+
+  # NB - don't add 'belongs_to :company' or presence validation
+  # of the 'company_id' since the gem does this for you.
+  ...
+end
+```
 
 
 ## Development
