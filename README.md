@@ -40,9 +40,9 @@ There are three main steps in adding multi-tenancy/company to your app with comp
 
 ### Decide on a process of determining the company/account ###
 
-In the current version a helper_method called "current_company" is made added to the ApplicationController,
-or which one you add the "company_setup" method to. This means the instance of "Company" needs to have been
-set into the 'request.env' - see the snippet below. One way of doing this is s
+In the current version a helper_method called "current_company" is added to the Controller,
+where you add the method "company_setup". You have therefore two choices. Either you use your
+own process to set the instance of "Company" into "request.env".
 
 ```ruby
 def current_company
@@ -61,6 +61,14 @@ def call(env)
 end
 ```
 
+The next version of "company_scope", will have the Rack::Middleware call integrated and the
+ability to opt out of using it.
+
+Alternatively you can use your own process for determining the "current_company" and override this
+method in your application controller, providing you declare this after the "company_setup" method,
+which is detailed in the next step.
+
+
 ### Setting the current company and controller based setup ###
 
 ```ruby
@@ -75,7 +83,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-The three methods need to be added to the Rails Controllers. For small systems they
+The above three methods need to be added to the Rails Controllers. For small systems they
 will typically be added to the ApplicationController. However they can be split into
 child-controllers dependent on the layout of the application.
 
@@ -89,24 +97,25 @@ The "company_setup" method adds some helper methods that are available to all ch
 * set_scoping_class :company
 * acts_as_company_filter
 
-The "set_scoping_class :company" method tells CompanyScope that we have a model called Company.
-This defaults to a model called Company but can be anything of your choosing such as Account. Each
-Model that is scoped by the Company needs to have the company_id column.
+The "set_scoping_class :company" method tells CompanyScope that we have a model called Company, and
+it will be the model that all others will be scoped with.
+The method parameter defaults to :company but can be another model of your choosing such as Account.
+Each model that is scoped by the Company needs to have the company_id column.
 
-The "CompanyScope" gem does not handle the process of adding migrations or changes to the DB.
+NB: The "CompanyScope" gem does not handle the process of adding migrations or changes to the DB.
 
 
 ### Scoping your models ###
 
-* The Company class is the scoping model. The "acts_as_guardian" method injects the behaviour
-required by the scoping model.
+* The "acts_as_guardian" method injects the behaviour required for the scoping model.
 
 ```ruby
 class Company < ActiveRecord::Base
 
   acts_as_guardian
 
-  has_many :users
+  ...
+
 end
 ```
 
@@ -119,8 +128,9 @@ class User < ActiveRecord::Base
 
   acts_as_company :account  # Defaults to :company if left blank!
 
-  # NB - don't add 'belongs_to :company' or presence validation
+  # NB - don't add 'belongs_to :company' or validation
   # of the 'company_id' since the gem does this for you.
+
   ...
 end
 ```
