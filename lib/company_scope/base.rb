@@ -21,13 +21,11 @@ module CompanyScope
 
         # - on creation we make sure the company_id is set!
         before_validation(on: :create) do |obj|
-          #obj.company_id = Company.current_id
           obj.send(eval(":#{tenant.to_s.underscore}_id="), Module.const_get("#{tenant.to_s.classify}").current_id)
         end
 
         before_save do |obj|
           # catch each time someone attempts to violate the company relationship!
-          #raise ::CompanyScope::Control::CompanyAccessViolationError unless obj.company_id == Company.current_id
           raise ::CompanyScope::Control::CompanyAccessViolationError unless
             obj.attributes["#{tenant.to_s.underscore}_id"] == Module.const_get("#{tenant.to_s.classify}").current_id
           true

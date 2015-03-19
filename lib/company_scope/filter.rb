@@ -16,11 +16,9 @@ module CompanyScope
       end
 
       def filter_by_current_company_scope
-        #Company.current_id = current_company.id
         scope_class.current_id = current_company.id
         yield
       ensure
-        #Company.current_id = nil
         scope_class.current_id = nil
       end
     end
