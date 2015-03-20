@@ -24,6 +24,7 @@ describe DummyApplicationController, type: :controller do
     Given!(:default_company_name) { 'DEFAULT' }
     Given!(:test_company) {
       company = MyCompany.create(company_name: default_company_name )
+      # - since the rack middleware is not being tested here - we need to set this!
       request.env["COMPANY_ID"] = company
       company
     }

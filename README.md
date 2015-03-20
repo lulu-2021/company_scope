@@ -41,15 +41,43 @@ There are three main steps in adding multi-tenancy/company to your app with comp
 ### Decide on a process of determining the company/account ###
 
 In the current version a helper_method called "current_company" is added to the Controller,
-where you add the method "company_setup". You have therefore two choices. Either you use your
-own process to set the instance of "Company" into "request.env".
+where you add the method "company_setup". You have therefore two choices. Either you use the
+company_scope gem process included Rack Middleware or your own process to set the instance
+of "Company" into "request.env".
+
+The included Rack Middleware can be inserted into the Rails Application stack in the config
+section of 'application.rb'.
+
+```ruby
+module YourRailsApp
+  class Application < Rails::Application
+    ...
+    # - add some Rack middleware to detect the company_name from the subdomain
+    config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, :company
+    ...
+  end
+end
+```
+
+The parameter in the example above needs to be a symbol of the model of your application
+that will act as the account i.e. company, tenant etc.
+
+The domain 'lvh.me' points to 127.0.0.1 and is therefore an ideal candidate for using with local development and subdomains since they will also all point to your localhost.
+
+[See here for info](http://stackoverflow.com/questions/12983072/rails-3-subdomain-testing-using-lvh-me)
+
+
+The method below is included in the Controller stack (see notes further down), and retrieves
+the company object the request object. The Rack Middleware "Rack::MultiCompany" injects this
+object into each request!
 
 ```ruby
 def current_company
   request.env["COMPANY_ID"]
 end
 ```
-An example of this is to use "Rack Middleware" - see the method excerpt below:
+
+An example of how the gem does this using "Rack Middleware" - is in the excerpt below:
 
 ```ruby
 def call(env)
@@ -60,9 +88,6 @@ def call(env)
   response
 end
 ```
-
-The next version of "company_scope", will have the Rack::Middleware call integrated and the
-ability to opt out of using it.
 
 Alternatively you can use your own process for determining the "current_company" and override this
 method in your application controller, providing you declare this after the "company_setup" method,
