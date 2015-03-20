@@ -11,6 +11,10 @@ Thread.current is the usual way to handle this but this is not entirely compatib
 
 [![Build Status](https://travis-ci.org/netflakes/company_scope.svg?branch=master)](https://travis-ci.org/netflakes/company_scope)
 
+## Coveralls
+
+[![Coverage Status](https://coveralls.io/repos/netflakes/company_scope/badge.svg)](https://coveralls.io/r/netflakes/company_scope)
+
 ## Installation
 
 Add this line to your application's Gemfile:
