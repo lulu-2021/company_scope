@@ -66,6 +66,15 @@ The domain 'lvh.me' points to 127.0.0.1 and is therefore an ideal candidate for 
 
 [See here for info](http://stackoverflow.com/questions/12983072/rails-3-subdomain-testing-using-lvh-me)
 
+NB: The middleware currently uses a regex to ensure the domain name can only obtain the following:
+
+* A-Z
+* a-z
+* 0-9
+
+No spaces or special characters are permitted and the name is also upcased - which needs to be handled
+by the model you use for scoping!
+
 
 The method below is included in the Controller stack (see notes further down), and retrieves
 the company object the request object. The Rack Middleware "Rack::MultiCompany" injects this

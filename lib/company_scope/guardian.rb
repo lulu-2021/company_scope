@@ -11,6 +11,9 @@ module CompanyScope
       #
       def acts_as_guardian
         #
+        puts "\n\n\n Class Name: #{self.class.downcase}\n\n\n"
+        validates_uniqueness_of "#{self.class.downcase}_name".to_sym #:company_name
+        #
         def current_id=(id)
           RequestStore.store[:default_scope_company_id] = id
         end
