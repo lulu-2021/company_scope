@@ -15,7 +15,6 @@ module CompanyScope
 
         validates_presence_of "#{tenant.to_s}_id".to_sym #:company_id
 
-        #default_scope { where("#{self.table_name}.company_id = ?", Company.current_id) }
         default_scope { where("#{self.table_name}.#{tenant.to_s.underscore}_id = ?",
           Module.const_get("#{tenant.to_s.classify}").current_id) }
 
@@ -33,7 +32,6 @@ module CompanyScope
 
         before_destroy do |obj|
           # force company to be correct for current_user
-          #raise ::CompanyScope::Control::CompanyAccessViolationError unless obj.company_id == Company.current_id
           raise ::CompanyScope::Control::CompanyAccessViolationError unless
             obj.attributes["#{tenant.to_s.underscore}_id"] == Module.const_get("#{tenant.to_s.classify}").current_id
           true

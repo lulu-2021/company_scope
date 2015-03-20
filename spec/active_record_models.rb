@@ -34,6 +34,4 @@ class MyCompany < ActiveRecord::Base
   acts_as_guardian
 
   has_many :users
-
-  validates_uniqueness_of :company_name
 end

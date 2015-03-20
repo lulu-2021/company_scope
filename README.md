@@ -68,15 +68,18 @@ The domain 'lvh.me' points to 127.0.0.1 and is therefore an ideal candidate for 
 
 NB: The middleware currently uses a regex to ensure the domain name can only obtain the following:
 
-* A-Z
-* a-z
-* 0-9
+* A-Z, a-z, 0-9
 
-The middleware then uses the column called "class_name"_name i.e. "company_name"
+The middleware then uses the column called "company_name" to retrieve the company by the subdomain.
 
-No spaces or special characters are permitted and the name is also upcased - which needs to be handled
-by the model you use for scoping! This just keeps the name clean and simple.
-We would strongly recommend you to have a proper index on the company
+The name is also upcased - which needs to be handled by the model you use for scoping! This just keeps the name clean and simple. We would strongly recommend you to have a proper index on the company_name field.
+
+NB: If you are using a different model and don't like the idea of using the company_name field you can simply
+use the ruby alias method.
+
+```ruby
+alias_method :company_name, :your_account_name_method
+```
 
 The method below is included in the Controller stack (see notes further down), and retrieves
 the company object the request object. The Rack Middleware "Rack::MultiCompany" injects this
@@ -143,13 +146,17 @@ NB: The "CompanyScope" gem does not handle the process of adding migrations or c
 
 ### Scoping your models ###
 
-* The "acts_as_guardian" method injects the behaviour required for the scoping model.
+* The "acts_as_guardian" method injects the behaviour required for the scoping model. The model
+needs to have a string column that is called by the "model"_name i.e. 'company_name'. The gem
+adds a uniqueness validator. NB to ensure this will not cause race conditions at the DB level
+you really need to add an index for this column.
 
 ```ruby
 class Company < ActiveRecord::Base
 
   acts_as_guardian
 
+  # NB - the gem adds a uniqueness validator for the company_name field
   ...
 
 end
@@ -173,6 +180,11 @@ class User < ActiveRecord::Base
   ...
 end
 ```
+
+### The Gem is currently being used in Rails 4 and Rails-API apps and is tested against Postgres,
+using UUID based ID/primary keys ###
+
+### It should work with other databases such as MySQL without any issues ###
 
 
 ## Development
