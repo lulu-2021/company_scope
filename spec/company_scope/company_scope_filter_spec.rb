@@ -1,5 +1,7 @@
 require 'spec_helper'
 require 'company_scope'
+require 'active_record_models'
+#
 #
 class DummyApplicationController < ActionController::Base
   include Rails.application.routes.url_helpers

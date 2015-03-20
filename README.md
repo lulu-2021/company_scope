@@ -72,9 +72,11 @@ NB: The middleware currently uses a regex to ensure the domain name can only obt
 * a-z
 * 0-9
 
-No spaces or special characters are permitted and the name is also upcased - which needs to be handled
-by the model you use for scoping!
+The middleware then uses the column called "class_name"_name i.e. "company_name"
 
+No spaces or special characters are permitted and the name is also upcased - which needs to be handled
+by the model you use for scoping! This just keeps the name clean and simple.
+We would strongly recommend you to have a proper index on the company
 
 The method below is included in the Controller stack (see notes further down), and retrieves
 the company object the request object. The Rack Middleware "Rack::MultiCompany" injects this
@@ -152,6 +154,9 @@ class Company < ActiveRecord::Base
 
 end
 ```
+
+The gem also injects
+
 
 * Each class to be scoped needs to have the "acts_as_company :account" method. The parameter ":account"
 defaults to :company if left blank. This can be any class/name of your choosing - the parameter needs

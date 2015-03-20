@@ -1,5 +1,5 @@
 # - simple MockCompany that responds to the methods that are called by the RackMiddleware
-class MyCompany
+class MockCompany
 
   attr_reader :company_name
 
@@ -8,10 +8,10 @@ class MyCompany
   end
 
   def self.find_by_company_name(company_name)
-    MyCompany.new(company_name)
+    MockCompany.new(company_name)
   end
 
   def self.table_name
-    "my_companies"
+    "mock_companies"
   end
 end
