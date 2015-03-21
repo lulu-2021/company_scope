@@ -23,6 +23,8 @@ module TestApp
   #
   class Application < Rails::Application
     #
+    
+    #
     config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, :my_company
     #
   end
