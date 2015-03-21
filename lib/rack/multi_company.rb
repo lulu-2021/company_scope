@@ -31,14 +31,10 @@ module Rack
     def retrieve_company_from_subdomain(domain)
       # - During test runs we load a company called 'DEFAULT' - it does not need to exist during initialisation
       @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT') if Rails.env == 'test'
-
       # - only ever load the company when the subdomain changes - also works when company is nil from an unsuccessful attempt..
       @company = Module.const_get(@company_class_name).find_by_company_name(domain) unless ( domain == @company.to_s )
-
+      raise CompanyScope::Control::CompanyAccessViolationError if @company == nil
       @company
-    rescue ActiveRecord::RecordNotFound => e
-      puts "\n\n Rack Error - Company not found: #{e.to_s}\n\n"
-      nil
     end
   end
 end

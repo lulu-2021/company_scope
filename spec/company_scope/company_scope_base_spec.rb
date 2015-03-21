@@ -133,6 +133,20 @@ describe CompanyScope::Base do
     }
   end
 
+  context 'should raise an Error during an attempt to destroy an object whent the company is wrong' do
+    Given(:invalid_id) { 99999 }
+    Given!(:retrieve_user) {
+      MyCompany.current_id = setup1
+      User.where(user_name: user_name1).first
+    }
+
+    Then {
+      MyCompany.current_id = invalid_id  # i.e. be sure its out of range!
+      expect(lambda { retrieve_user.destroy }).to raise_error('CompanyScope::Control::CompanyAccessViolationError')
+    }
+
+  end
+
   context 'it should scope the querying of the data by the current_my_company' do
     Then { expect(Task.unscoped.all.count).to eq 4 }
     Then { expect(User.unscoped.all.count).to eq 2 }

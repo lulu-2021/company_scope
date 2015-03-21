@@ -20,4 +20,10 @@ describe Rack::MultiCompany do
 
     Then { expect(test_app["COMPANY_ID"].company_name).to eq 'DEFAULT' }
   end
+
+  context 'raise Error when company in subdomain is not found' do
+    Then {
+      expect(lambda { rack_mock_request.get('/', {"HTTP_HOST" => "badtenant.lvh.me"}) }).to raise_error('CompanyScope::Control::CompanyAccessViolationError')
+    }
+  end
 end
