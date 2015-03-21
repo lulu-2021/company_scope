@@ -24,7 +24,7 @@ module CompanyScope
     end
 
     module FilterClassMethods
-      #
+      # - the default is set by the Rails application configuration!
       def set_scoping_class(scope_model = :company)
         self.class_eval do
           cattr_accessor :scope_class
@@ -34,6 +34,7 @@ module CompanyScope
       #
       def company_setup
         helper_method :current_company
+        set_scoping_class Rails.application.config.company_scope[:company_model]
       end
       #
       def acts_as_company_filter

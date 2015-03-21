@@ -6,7 +6,7 @@ module CompanyScope
     # enable namespaced configuration in Rails environments
     config.company_scope = ActiveSupport::OrderedOptions.new
     #
-    initializer "company_scope.configuration" do |app|
+    initializer :after_initialize do |app|
 
       CompanyScope.configure do |config|
         config.company_model = app.config.company_scope[:company_model]
