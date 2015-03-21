@@ -3,8 +3,14 @@ require 'rails'
 #
 module CompanyScope
   class Railtie < Rails::Railtie
+    # enable namespaced configuration in Rails environments
+    config.company_scope = ActiveSupport::OrderedOptions.new
     #
     initializer "company_scope.configuration" do |app|
+
+      CompanyScope.configure do |config|
+        config.company_model = app.config.company_scope[:company_model]
+      end
 
       # - retrieve the company_scope - model name - usually set in environment.rb
       app.config.company_scope[:company_model] || :company
