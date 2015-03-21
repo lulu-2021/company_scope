@@ -12,7 +12,23 @@ class MockCompany
     if company_name == 'DEFAULT'
       MockCompany.new(company_name)
     else
+      MockCompany.new('BAD')
+    end
+  end
+
+  def first
+    if company_name == 'DEFAULT'
+      MockCompany.new(company_name)
+    else
       nil
+    end
+  end
+
+  def id
+    if company_name == 'DEFAULT'
+      'DEFAULT_ID'
+    else
+      'BAD_ID'
     end
   end
 

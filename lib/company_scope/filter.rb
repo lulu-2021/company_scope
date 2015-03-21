@@ -11,12 +11,12 @@ module CompanyScope
 
     module FilterMethods
 
-      def current_company
-        request.env["COMPANY_ID"] # a default that is best overridden in the application controller..
+      def current_company_id
+        request.env["COMPANY_ID"]
       end
 
       def filter_by_current_company_scope
-        scope_class.current_id = current_company.id
+        scope_class.current_id = current_company_id
         yield
       ensure
         scope_class.current_id = nil

@@ -18,7 +18,7 @@ describe Rack::MultiCompany do
   context 'checking that the COMPANY_ID value is correctly set in the call method' do
     When { rack_mock_request.get('/', {"HTTP_HOST" => "default.lvh.me"}) }
 
-    Then { expect(test_app["COMPANY_ID"].company_name).to eq 'DEFAULT' }
+    Then { expect(test_app["COMPANY_ID"]).to eq 'DEFAULT_ID' }
   end
 
   context 'raise Error when company in subdomain is not found' do
