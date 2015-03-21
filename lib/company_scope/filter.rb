@@ -12,7 +12,9 @@ module CompanyScope
     module FilterMethods
 
       def current_company_id
-        request.env["COMPANY_ID"]
+        @company_id = request.env["COMPANY_ID"]
+        raise CompanyScope::Control::CompanyAccessViolationError if @company_id.nil?
+        @company_id
       end
 
       def filter_by_current_company_scope
@@ -46,7 +48,7 @@ module CompanyScope
       #
       def rescue_from_company_access_violations
         # - rescue from errors relating to the wrong company to avoid cross company data leakage
-        rescue_from ::CompanyScope::Control::CompanyAccessViolationError, with: :company_scope_company_not_set
+        rescue_from CompanyScope::Control::CompanyAccessViolationError, with: :company_scope_company_not_set
       end
 
       def company_scope_company_not_set

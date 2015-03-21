@@ -19,9 +19,8 @@ describe DummyApplicationController, type: :controller do
       }, status: 200
     end
   end
-
+  #
   context 'checking whether the correct methods have been injected' do
-    #
     Given!(:default_company_name) { 'DEFAULT' }
     Given!(:test_company) {
       company = MyCompany.create(company_name: default_company_name )
@@ -34,5 +33,6 @@ describe DummyApplicationController, type: :controller do
     #
     Then { expect(response.status).to eq 200 }
     Then { expect(JSON.parse(response.body)['my_company_id']).to eq test_company.id.to_s }
+    Then { expect(DummyApplicationController).to respond_to(:company_scope_company_not_set) }
   end
 end
