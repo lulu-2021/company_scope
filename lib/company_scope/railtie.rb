@@ -26,9 +26,6 @@ module CompanyScope
         # - actions in the controller are wrapped
         ActionController::API.send(:include, CompanyScope::Filter)
       end
-
-      #ActionController::Base.send(:include, CompanyScope::Control)
-      #ActionController::Base.send(:include, CompanyScope::Filter)
     end
     #
   end
