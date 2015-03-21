@@ -6,7 +6,6 @@ require 'active_record_models'
 class DummyApplicationController < ActionController::Base
   include Rails.application.routes.url_helpers
   company_setup # - inject the setup
-  #set_scoping_class :my_company # - symbol of the scoping class (defaults to :company)
 end
 #
 describe DummyApplicationController, type: :controller do
