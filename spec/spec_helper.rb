@@ -23,9 +23,10 @@ module TestApp
   #
   class Application < Rails::Application
     #
-    
+    # This is the only configuration requirement for the company_scope gem
+    # i.e. set the scoping model during the Rails startup configuration
     #
-    config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, :my_company
+    config.company_scope.company_model = :my_company
     #
   end
 end
