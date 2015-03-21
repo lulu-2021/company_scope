@@ -11,6 +11,7 @@ describe CompanyScope::Railtie do
 
     Then { expect(railtie).not_to be nil }
     Then { expect(DummyCompany).to respond_to(:acts_as_guardian) }
+    Then { expect(ActiveRecord::Base).to respond_to(:acts_as_guardian) }
   end
 
   context 'after initialisation the user should have the scoping methods' do
@@ -18,5 +19,6 @@ describe CompanyScope::Railtie do
 
     Then { expect(railtie).not_to be nil }
     Then { expect(DummyUser).to respond_to(:acts_as_company) }
+    Then { expect(ActiveRecord::Base).to respond_to(:acts_as_company) }
   end
 end
