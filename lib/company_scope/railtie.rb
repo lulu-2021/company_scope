@@ -18,7 +18,7 @@ module CompanyScope
       # - add MultiCompany Rack middleware to detect the company_name from the subdomain
       app.config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, company_config
       # - add our custom CompanyError handling before the default kicks in..
-      app.config.middleware.insert_before Rack::MultiCompany, Rack::CompanyError
+      app.config.middleware.insert_before Rack::MultiCompany, Rack::CompanyError, ''
 
       # - the base module injects the default scope into company dependant models
       ActiveRecord::Base.send(:include, CompanyScope::Base)
