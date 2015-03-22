@@ -25,4 +25,8 @@ describe CompanyScope::Railtie do
     Then { expect(DummyUser).to respond_to(:acts_as_company) }
     Then { expect(ActiveRecord::Base).to respond_to(:acts_as_company) }
   end
+
+  context 'after initialisation the App should have the company scoping model configured' do
+    Then { expect(Rails.application.config.company_scope[:company_model]).to eq :my_company }
+  end
 end

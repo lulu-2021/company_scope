@@ -7,16 +7,16 @@ module CompanyScope
     initializer :after_initialize do |app|
       #
       puts "\nLoading Railtie after_initialize..\n"
-
+      #
       CompanyScope.configure do |config|
         config.company_model = app.config.company_scope[:company_model]
       end
 
-      # - retrieve the company_scope - model name - usually set in environment.rb
-      app.config.company_scope[:company_model] || :company
+      # - retrieve the company_scope - model name - usually set in application.rb
+      company_config = app.config.company_scope[:company_model] || :company
 
       # - add MultiCompany Rack middleware to detect the company_name from the subdomain
-      app.config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, :my_company
+      app.config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, company_config
 
       # - the base module injects the default scope into company dependant models
       ActiveRecord::Base.send(:include, CompanyScope::Base)
