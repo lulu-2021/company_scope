@@ -56,8 +56,8 @@ section of 'application.rb'.
 module YourRailsApp
   class Application < Rails::Application
     ...
-    # - add some Rack middleware to detect the company_name from the subdomain
-    config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, :company
+    # - add Company Scope Model name (that your app will be scoped by)
+    config.company_scope.company_model = :my_company
     ...
   end
 end
