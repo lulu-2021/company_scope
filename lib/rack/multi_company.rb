@@ -8,7 +8,7 @@ module Rack
     def initialize(app, company_class)
       @app = app
       @company_class_name = company_class.to_s.split('_').collect!{ |w| w.capitalize }.join
-      @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT').first if db_configured
+      @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT') if db_configured
     end
 
     def call(env)
@@ -32,9 +32,9 @@ module Rack
 
     def retrieve_company_from_subdomain(domain)
       # - During test runs we load a company called 'DEFAULT' - it does not need to exist during initialisation
-      @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT').first if Rails.env == 'test'
+      @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT') if Rails.env == 'test'
       # - only ever load the company when the subdomain changes - also works when company is nil from an unsuccessful attempt..
-      @company = Module.const_get(@company_class_name).find_by_company_name(domain).first unless ( domain == @company.company_name )
+      @company = Module.const_get(@company_class_name).find_by_company_name(domain) unless ( domain == @company.company_name )
       raise CompanyScope::Control::CompanyAccessViolationError if @company == nil
       @company
     end
