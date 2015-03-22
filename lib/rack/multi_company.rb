@@ -8,8 +8,7 @@ module Rack
     def initialize(app, company_class)
       @app = app
       @company_class_name = company_class.to_s.split('_').collect!{ |w| w.capitalize }.join
-      company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT') if db_configured
-      @company = company.first unless company.nil?
+      @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT').first if db_configured
     end
 
     def call(env)
