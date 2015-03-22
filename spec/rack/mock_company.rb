@@ -11,16 +11,10 @@ class MockCompany
   def self.find_by_company_name(company_name)
     if company_name == 'DEFAULT'
       MockCompany.new(company_name)
+    elsif company_name.downcase == 'badtenant'
+      nil
     else
       MockCompany.new('BAD')
-    end
-  end
-
-  def first
-    if company_name == 'DEFAULT'
-      MockCompany.new(company_name)
-    else
-      nil
     end
   end
 
