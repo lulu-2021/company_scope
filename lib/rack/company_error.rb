@@ -17,7 +17,7 @@ module Rack
         if ::File.exist?(error_file)
           return render_format(status, 'text/html', ::File.read(path))
         else
-          return [404, { "X-Cascade" => "pass" }, [ { status: 404, error: error_output }.to_html ]]
+          return [404, { "X-Cascade" => "pass" }, [ { status: 404, error: error_output }.to_s ]]
         end
       end
     end
