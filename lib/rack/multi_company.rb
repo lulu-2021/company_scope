@@ -34,7 +34,8 @@ module Rack
       # - During test runs we load a company called 'DEFAULT' - it does not need to exist during initialisation
       @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT') if Rails.env == 'test'
       # - only ever load the company when the subdomain changes - also works when company is nil from an unsuccessful attempt..
-      @company = Module.const_get(@company_class_name).find_by_company_name(domain) unless ( domain == @company.company_name || @company.nil? )
+      @company_name = @company.company_name unless @company.nil?
+      @company = Module.const_get(@company_class_name).find_by_company_name(domain) unless ( domain == @company_name )
       raise CompanyScope::Control::CompanyAccessViolationError if @company == nil
       @company
     end
