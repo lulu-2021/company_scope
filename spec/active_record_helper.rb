@@ -1,4 +1,3 @@
-require 'rails/all'
 require 'database_cleaner'
 #
 ActiveRecord::Base.logger = Logger.new(File.join(File.dirname(__FILE__), "debug.log"))

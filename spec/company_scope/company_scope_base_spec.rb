@@ -1,4 +1,8 @@
+#
 require 'spec_helper'
+require 'spec_helper_without_railtie'
+#
+require 'active_record_schema'
 require 'active_record_models'
 #
 describe CompanyScope::Base do

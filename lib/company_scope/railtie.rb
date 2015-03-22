@@ -1,12 +1,14 @@
-require 'company_scope'
-require 'rails'
 #
 module CompanyScope
   class Railtie < Rails::Railtie
     # enable namespaced configuration in Rails environments
     config.company_scope = ActiveSupport::OrderedOptions.new
     #
+    puts "\n\nLoading Railtie..."
+    #
     initializer :after_initialize do |app|
+      #
+      puts "\n\n Railtie after_initialize.. \n\n"
 
       CompanyScope.configure do |config|
         config.company_model = app.config.company_scope[:company_model]
@@ -16,13 +18,14 @@ module CompanyScope
       app.config.company_scope[:company_model] || :company
 
       # - add MultiCompany Rack middleware to detect the company_name from the subdomain
-      app.config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, :company
+      app.config.middleware.insert_after Rack::Sendfile, Rack::MultiCompany, :my_company
 
       # - the base module injects the default scope into company dependant models
       ActiveRecord::Base.send(:include, CompanyScope::Base)
 
       # - the company_entity module injects class methods for acting as the company!
       ActiveRecord::Base.send(:include, CompanyScope::Guardian)
+
 
       if defined?(ActionController::Base)
         # - the control module has some error handling for the application controller

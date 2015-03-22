@@ -10,6 +10,7 @@ describe CompanyScope::Railtie do
     Given!(:railtie) { CompanyScope::Railtie.send(:new) }
 
     Then { expect(railtie).not_to be nil }
+
     Then { expect(DummyCompany).to respond_to(:acts_as_guardian) }
     Then { expect(ActiveRecord::Base).to respond_to(:acts_as_guardian) }
   end
