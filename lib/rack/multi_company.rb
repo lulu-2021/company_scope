@@ -19,7 +19,6 @@ module Rack
       # insert the company into ENV - for the controller helper_method 'current_company'
       retrieve_company_from_subdomain(domain)
       env['COMPANY_ID'] = @company.id unless @company.nil?
-      puts "\n\n Rack MultiCompany setting COMPANY_ID env: #{env['COMPANY_ID']}"
       response = @app.call(env)
       response
     end
