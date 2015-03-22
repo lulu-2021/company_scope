@@ -7,6 +7,7 @@ module Rack
     end
 
     def call(env)
+      puts "\n\n\nRack attempt to catch Company Violation\n\n\n"
       begin
         @app.call(env)
       rescue CompanyScope::Control::CompanyAccessViolationError => error
