@@ -4,11 +4,9 @@ module CompanyScope
     # enable namespaced configuration in Rails environments
     config.company_scope = ActiveSupport::OrderedOptions.new
     #
-    puts "\n\nLoading Railtie..."
-    #
     initializer :after_initialize do |app|
       #
-      puts "\n\n Railtie after_initialize.. \n\n"
+      puts "\nLoading Railtie after_initialize..\n"
 
       CompanyScope.configure do |config|
         config.company_model = app.config.company_scope[:company_model]

@@ -10,7 +10,6 @@ require 'spec_helper_load_application'
 #
 require 'active_record_models'
 require 'active_record_schema'
-
 #
 describe CompanyScope::Guardian do
 
