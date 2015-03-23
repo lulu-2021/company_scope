@@ -1,5 +1,6 @@
 require "request_store"
 #
+require File.dirname(__FILE__) + '/subdomain_matcher'
 require File.dirname(__FILE__) + '/custom/multi_company'
 require File.dirname(__FILE__) + '/company_scope/base'
 require File.dirname(__FILE__) + '/company_scope/guardian'
