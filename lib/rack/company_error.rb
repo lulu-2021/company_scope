@@ -13,7 +13,7 @@ module Rack
         @app.call(env)
       rescue CompanyScope::Control::CompanyAccessViolationError => error
         error_output = "You tried to access a company that does not exist : #{error}"
-        error_file = "#{error_path}/invalid_company.html"
+        error_file = "#{@error_path}/invalid_company.html"
         if ::File.exist?(error_file)
           return render_format(status, 'text/html', ::File.read(path))
         else
