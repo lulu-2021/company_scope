@@ -48,23 +48,55 @@ In the current version a helper_method called "current_company" is added to the 
 where you add the method "company_setup". The gem includes Rack Middleware that injects the
 "Company ID" into "request.env".
 
-The included Rack Middleware is inserted into the Rails Application stack automatically and
-you need to let it know what the model is called that is handling the scoping - see example
-below: (i.e. adding the company_scope.company_model name as a sym)
+The included Rack Middleware is inserted into the Rails Application stack automatically.
+The defaults are to use the an ActiveRecord model called company for the scoping model.
+The process of determining the company name from the request is done by extracting the
+subdomain i.e. the first section in dotted url notation.
+
+The example shows the default settings. If you use the default you do NOT need to set this
+in the application.rb file. If however you want to use a different scoping model and a
+different matching process you need to change these.
 
 ```ruby
 module YourRailsApp
   class Application < Rails::Application
     ...
-    # - add Company Scope Model name (that your app will be scoped by)
-    config.company_scope.company_model = :my_company
+    # - These are the DEFAULTS and are set automatically..
+    # - you only need to set these if you change them!
+    config.company_scope.company_model = :company
+    config.company_scope.company_name_matcher = :subdomain_matcher
     ...
   end
 end
 ```
 
-The parameter in the example above needs to be a symbol of the model of your application
-that will act as the account i.e. company, tenant etc.
+The symbol parameter passed to the .company_model configuration in the example above needs
+to be a symbol of the model of your application that will act as the account i.e. company,
+tenant etc.
+
+The symbol parameter passed to the .company_name_matcher configuration is the underscored
+version of the class that is used to handle the matching. All it needs to implement is a
+method called to_domain(request) that takes the request as the parameter. It needs to return
+the company name as a string as:
+
+```ruby
+class MyCustomDomainMatcher
+  def to_domain(request)
+    .... my custom logic to extrapoulate the company name
+    company_name # the return value must be the company_name as a string.
+  end
+```
+And then include this in the application.rb
+
+```ruby
+module YourRailsApp
+  class Application < Rails::Application
+    ...
+    config.company_scope.company_name_matcher = :my_custom_domain_matcher
+    ...
+  end
+end
+```
 
 The domain 'lvh.me' points to 127.0.0.1 and is therefore an ideal candidate for using with local development and subdomains since they will also all point to your localhost.
 
