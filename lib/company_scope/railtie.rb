@@ -15,7 +15,7 @@ module CompanyScope
 
       # - retrieve the company_scope - model name - usually set in application.rb
       company_config = app.config.company_scope[:company_model] || :company
-      company_name_matcher = app.config.company_scope[:company_name_matcher]
+      company_name_matcher = app.config.company_scope[:company_name_matcher] || :subdomain_matcher
 
       # - add MultiCompany Rack middleware to detect the company_name from the subdomain
       app.config.middleware.insert_after Rack::Sendfile, Custom::MultiCompany, company_config, company_name_matcher

@@ -24,4 +24,5 @@ require 'request_store'
 require 'active_record_helper'
 #
 require 'company_scope'
+require 'subdomain_matcher'
 #

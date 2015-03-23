@@ -15,14 +15,12 @@ module Custom
     def call(env)
       request = Rack::Request.new(env)
 
-      #first_sub_domain = request.host.split('.').first
-      # disallow any non alphabetic chars!
-      #domain = first_sub_domain.upcase if first_sub_domain.match(/\A[a-zA-Z0-9]*\z/)
-
+      # - the matcher is an injected class with a to_domain method that makes it easy to replace
+      # - with a different scheme of obtaining the company name from Request/Url.
       domain = @company_name_matcher.to_domain(request)
 
       # insert the company into ENV - for the controller helper_method 'current_company'
-      retrieve_company_from_subdomain(domain)
+      retrieve_company_from_subdomain(domain.upcase)
       env['COMPANY_ID'] = @company.id unless @company.nil?
       @app.call(env)
     end
