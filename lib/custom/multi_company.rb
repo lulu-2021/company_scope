@@ -32,16 +32,9 @@ module Custom
       # - During test runs we load a company called 'DEFAULT' - it does not need to exist during initialisation
       @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT') if Rails.env == 'test'
       # - only ever load the company when the subdomain changes - also works when company is nil from an unsuccessful attempt..
-
-      if @company.nil?
-        @company_name = ''
-      else
-        @company_name = @company.company_name
-      end
-      #@company.nil? ? @company_name = '' : @company_name = @company.company_name
-
+      # - store the company_name to ensure we don't call the DB for each company request!
+      @company.nil? ? @company_name = '' : @company_name = @company.company_name
       @company = Module.const_get(@company_class_name).find_by_company_name(domain) unless ( domain == @company_name )
-      #raise CompanyScope::Control::CompanyAccessViolationError if @company == nil
       @company
     end
   end
