@@ -8,7 +8,7 @@ module Custom
     end
 
     def call(env)
-      multi_company_middleware = Custom::MultiCompany.new(@app)
+      multi_company_middleware = Custom::MultiCompany.new(@app, @company_class_name)
       invalid_company_middleware = Custom::CompanyError.new(@app, @company_class_name)
       # - always call the MultiCompany Middleware!
       env = multi_company_middleware.call(env)
