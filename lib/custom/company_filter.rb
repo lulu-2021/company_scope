@@ -16,8 +16,9 @@ module Custom
         # - only call the InvalidCompany middleware when we have an issue!
         env = invalid_company_middleware.call(env)
       else
-        response = @app.call(env)
-        response
+        @app.call(env)
+        #response =  @app.call(env)
+        #response
       end
     end
   end
