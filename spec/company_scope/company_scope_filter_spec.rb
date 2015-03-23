@@ -44,4 +44,14 @@ describe DummyApplicationController, type: :controller do
     #
     Then { expect(controller).to respond_to(:company_scope_company_not_set) }
   end
+  #
+  context 'when an invalid company is requested it should raise an error' do
+    Given!(:default_company_name) { 'DEFAULT' }
+    Given!(:setup) {
+      # - simulate the that the rack middleware sends us a nil for company!
+      request.env["COMPANY_ID"] = nil
+    }
+    #
+    Then { expect(lambda { get :index}).to raise_error('CompanyScope::Control::CompanyAccessViolationError') }
+  end
 end
