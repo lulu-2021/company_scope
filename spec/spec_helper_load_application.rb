@@ -13,7 +13,7 @@ module TestApp
     puts "\n\n TestApp: Rails Starting..."
     #
     config.company_scope.company_model = :my_company
-    config.company_scope.company_name_matcher = :matcher
+    config.company_scope.company_name_matcher = :subdomain_matcher
     #
   end
 end
