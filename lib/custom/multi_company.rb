@@ -9,7 +9,8 @@ module Custom
       @app = app
       @company_class_name = company_class.to_s.split('_').collect!{ |w| w.capitalize }.join
       @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT') if db_configured
-      @company_name_matcher = company_name_matcher
+      @company_name_matcher = Module.const_get(
+        company_name_matcher.to_s.split('_').collect!{ |w| w.capitalize }.join)
     end
 
     def call(env)

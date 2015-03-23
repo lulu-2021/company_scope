@@ -10,7 +10,7 @@ describe Custom::MultiCompany do
 
   Given!(:test_app) { MockRackApp.new }
   Given!(:mock_matcher) { MockMatcher }
-  Given!(:rack_test_middleware) { Custom::MultiCompany.new(test_app, :mock_company, MockMatcher) }
+  Given!(:rack_test_middleware) { Custom::MultiCompany.new(test_app, :mock_company, :mock_matcher) }
   Given!(:rack_mock_request) { Rack::MockRequest.new(rack_test_middleware) }
 
   context 'checking initialisation MultiCompany rack middleware' do
