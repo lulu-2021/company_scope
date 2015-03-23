@@ -23,6 +23,10 @@ module CompanyScope
       ensure
         scope_class.current_id = nil
       end
+
+      def company_scope_company_not_set
+        redirect_to(wrong_company_path) and return
+      end
     end
 
     module FilterClassMethods
@@ -49,10 +53,6 @@ module CompanyScope
       def rescue_from_company_access_violations
         # - rescue from errors relating to the wrong company to avoid cross company data leakage
         rescue_from CompanyScope::Control::CompanyAccessViolationError, with: :company_scope_company_not_set
-      end
-
-      def company_scope_company_not_set
-        redirect_to(wrong_company_path) and return
       end
     end
   end
