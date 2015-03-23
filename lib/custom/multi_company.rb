@@ -21,6 +21,7 @@ module Custom
       if @company.nil?
         env['COMPANY_SCOPE_ERROR'] = 'INVALID_COMPANY_ERROR'
       else
+        env['COMPANY_SCOPE_ERROR'] = ''
         env['COMPANY_ID'] = @company.id
       end
       response = @app.call(env)
