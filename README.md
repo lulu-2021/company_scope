@@ -37,20 +37,20 @@ Getting started
 ===============
 There are three main steps in adding multi-tenancy/company to your app with company_scope:
 
-1. Decide on a process of determining the company/account. Such as using the sub-domain.
+1. Determining the company/account. Such as using the sub-domain.
 2. Setting the current company and controller based setup.
 3. Scoping your models.
 
 
-### Decide on a process of determining the company/account ###
+### Process of determining the company/account
 
 In the current version a helper_method called "current_company" is added to the Controller,
-where you add the method "company_setup". You have therefore two choices. Either you use the
-company_scope gem process included Rack Middleware or your own process to set the instance
-of "Company" into "request.env".
+where you add the method "company_setup". The gem includes Rack Middleware that injects the
+"Company ID" into "request.env".
 
-The included Rack Middleware can be inserted into the Rails Application stack in the config
-section of 'application.rb'.
+The included Rack Middleware is inserted into the Rails Application stack automatically and
+you need to let it know what the model is called that is handling the scoping - see example
+below: (i.e. adding the company_scope.company_model name as a sym)
 
 ```ruby
 module YourRailsApp
@@ -87,32 +87,24 @@ alias_method :company_name, :your_account_name_method
 
 The method below is included in the Controller stack (see notes further down), and retrieves
 the company object the request object. The Rack Middleware "Rack::MultiCompany" injects this
-object into each request!
+object into each request! It raises an CompanyAccessViolationError if the id is nil. There is
+an extra filter added to handle these errors and redirects to a custom route called: wrong_company_path
 
 ```ruby
-def current_company
+def current_company_id
   request.env["COMPANY_ID"]
 end
 ```
 
-An example of how the gem does this using "Rack Middleware" - is in the excerpt below:
+An example of adding the wrong_company_path route in a rails app:
 
 ```ruby
-def call(env)
-  request = Rack::Request.new(env)
-  domain = request.host.split('.').first.upcase
-  env["COMPANY_ID"] = your_custom_method_to_retrieve_company_from_subdomain(domain)
-  response = @app.call(env)
-  response
-end
+
+ get 'wrong_company' => 'invalid_company#index', as: :wrong_company
+
 ```
 
-Alternatively you can use your own process for determining the "current_company" and override this
-method in your application controller, providing you declare this after the "company_setup" method,
-which is detailed in the next step.
-
-
-### Setting the current company and controller based setup ###
+### Setting the current company and controller based setup
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -130,28 +122,28 @@ The above three methods need to be added to the Rails Controllers. For small sys
 will typically be added to the ApplicationController. However they can be split into
 child-controllers dependent on the layout of the application.
 
-All Controllers that inherit from the Controller that implements the "acts_as_company_filter"
+All Controllers that inherit from the Controller that implements the acts_as_company_filter
 will have an around filter applied that set the Company class attribute required for the scoping
 process.
 
-The "company_setup" method adds some helper methods that are available to all child controllers.
+The 'company_setup' method adds some helper methods that are available to all child controllers.
 
 * company_setup
 * set_scoping_class :company
 * acts_as_company_filter
 
-The "set_scoping_class :company" method tells CompanyScope that we have a model called Company, and
+The 'set_scoping_class :company' method tells CompanyScope that we have a model called Company, and
 it will be the model that all others will be scoped with.
 The method parameter defaults to :company but can be another model of your choosing such as Account.
 Each model that is scoped by the Company needs to have the company_id column.
 
-NB: The "CompanyScope" gem does not handle the process of adding migrations or changes to the DB.
+NB: The 'CompanyScope' gem does not handle the process of adding migrations or changes to the DB.
 
 
-### Scoping your models ###
+### Scoping your models
 
-* The "acts_as_guardian" method injects the behaviour required for the scoping model. The model
-needs to have a string column that is called by the "model"_name i.e. 'company_name'. The gem
+* The 'acts_as_guardian' method injects the behaviour required for the scoping model. The model
+needs to have a string column that is called by the 'model'_name i.e. 'company_name'. The gem
 adds a uniqueness validator. NB to ensure this will not cause race conditions at the DB level
 you really need to add an index for this column.
 
@@ -161,7 +153,6 @@ class Company < ActiveRecord::Base
   acts_as_guardian
 
   # NB - the gem adds a uniqueness validator for the company_name field
-  ...
 
 end
 ```
@@ -169,8 +160,8 @@ end
 The gem also injects
 
 
-* Each class to be scoped needs to have the "acts_as_company :account" method. The parameter ":account"
-defaults to :company if left blank. This can be any class/name of your choosing - the parameter needs
+* Each class to be scoped needs to have the 'acts_as_company :account' method. The parameter ':account'
+defaults to :company if left blank. This can be any class/name of your choosing. The parameter needs
 to be a underscored version of the Class name as a symbol.
 
 ```ruby
@@ -185,10 +176,9 @@ class User < ActiveRecord::Base
 end
 ```
 
-### The Gem is currently being used in Rails 4 and Rails-API apps and is tested against Postgres,
-using UUID based ID/primary keys ###
+### The Gem is currently being used in Rails 4 and Rails-API apps and is tested against Postgres
 
-### It should work with other databases such as MySQL without any issues ###
+### It should work with other databases such as MySQL without any issues
 
 
 ## Development
