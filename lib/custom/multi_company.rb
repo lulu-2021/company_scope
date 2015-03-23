@@ -5,17 +5,22 @@ module Custom
     #
     attr_reader :company_class_name
     #
-    def initialize(app, company_class)
+    def initialize(app, company_class, company_name_matcher)
       @app = app
       @company_class_name = company_class.to_s.split('_').collect!{ |w| w.capitalize }.join
       @company = Module.const_get(@company_class_name).find_by_company_name('DEFAULT') if db_configured
+      @company_name_matcher = company_name_matcher
     end
 
     def call(env)
       request = Rack::Request.new(env)
-      first_sub_domain = request.host.split('.').first
+
+      #first_sub_domain = request.host.split('.').first
       # disallow any non alphabetic chars!
-      domain = first_sub_domain.upcase if first_sub_domain.match(/\A[a-zA-Z0-9]*\z/)
+      #domain = first_sub_domain.upcase if first_sub_domain.match(/\A[a-zA-Z0-9]*\z/)
+
+      domain = @company_name_matcher.to_domain(request)
+
       # insert the company into ENV - for the controller helper_method 'current_company'
       retrieve_company_from_subdomain(domain)
       env['COMPANY_ID'] = @company.id unless @company.nil?
