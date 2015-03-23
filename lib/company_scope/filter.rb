@@ -40,7 +40,8 @@ module CompanyScope
       #
       def company_setup
         helper_method :current_company
-        set_scoping_class Rails.application.config.company_scope[:company_model]
+        #set_scoping_class Rails.application.config.company_scope[:company_model]
+        set_scoping_class CompanyScope.config.company_model
       end
       #
       def acts_as_company_filter
