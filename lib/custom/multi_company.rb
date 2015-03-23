@@ -19,13 +19,11 @@ module Custom
       # insert the company into ENV - for the controller helper_method 'current_company'
       retrieve_company_from_subdomain(domain)
       if @company.nil?
-        env['COMPANY_SCOPE_ERROR'] = 'INVALID_COMPANY_ERROR'
+        env['COMPANY_ID'] = {}
       else
-        env['COMPANY_SCOPE_ERROR'] = ''
         env['COMPANY_ID'] = @company.id
       end
-      response = @app.call(env)
-      response
+      @app.call(env)
     end
 
     private

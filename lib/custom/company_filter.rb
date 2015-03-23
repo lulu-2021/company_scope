@@ -12,15 +12,13 @@ module Custom
       invalid_company_middleware = Custom::CompanyError.new(@app, @company_class_name)
       # - always call the MultiCompany Middleware!
       env = multi_company_middleware.call(env)
-
-      puts "\n\n\n Env in Filter: \n\n#{env.inspect}\n\n\n"
-
-      #if env['COMPANY_SCOPE_ERROR'] == 'INVALID_COMPANY_ERROR' unless env['COMPANY_SCOPE_ERROR'].nil?
-      #  # - only call the InvalidCompany middleware when we have an issue!
-      #  env = invalid_company_middleware.call(env)
-      #end
-      response = @app.call(env)
-      response
+      if env['COMPANY_ID'] == {}
+        # - only call the InvalidCompany middleware when we have an issue!
+        env = invalid_company_middleware.call(env)
+      else
+        response = @app.call(env)
+        response
+      end
     end
   end
 end
