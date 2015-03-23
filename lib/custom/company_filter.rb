@@ -15,10 +15,10 @@ module Custom
 
       puts "\n\n\n Env in Filter: \n\n#{env.inspect}\n\n\n"
 
-      if env['COMPANY_SCOPE_ERROR'] == 'INVALID_COMPANY_ERROR'
-        # - only call the InvalidCompany middleware when we have an issue!
-        env = invalid_company_middleware.call(env)
-      end
+      #if env['COMPANY_SCOPE_ERROR'] == 'INVALID_COMPANY_ERROR' unless env['COMPANY_SCOPE_ERROR'].nil?
+      #  # - only call the InvalidCompany middleware when we have an issue!
+      #  env = invalid_company_middleware.call(env)
+      #end
       response = @app.call(env)
       response
     end
