@@ -12,7 +12,6 @@ module Custom
 
     def call(env)
       @app.call(env)
-      env['COMPANY_SCOPE_ERROR'] = 'RENDERED_INVALID_COMPANY_ERROR'
       render_exception(env)
     end
 

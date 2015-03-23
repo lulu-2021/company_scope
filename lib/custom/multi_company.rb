@@ -18,7 +18,7 @@ module Custom
       domain = first_sub_domain.upcase if first_sub_domain.match(/\A[a-zA-Z0-9]*\z/)
       # insert the company into ENV - for the controller helper_method 'current_company'
       retrieve_company_from_subdomain(domain)
-      env['COMPANY_ID'] = @company.id
+      env['COMPANY_ID'] = @company.id unless @company.nil?
       @app.call(env)
     end
 
