@@ -52,8 +52,7 @@ module CompanyScope
       end
 
       def company_scope_company_not_set
-        flash[:error] = t('application.warnings.company_not_set')
-        return head(:forbidden)
+        redirect_to(wrong_company_path) and return
       end
     end
   end
