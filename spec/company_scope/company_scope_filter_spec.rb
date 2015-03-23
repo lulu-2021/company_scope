@@ -41,7 +41,7 @@ describe DummyApplicationController, type: :controller do
     #
     Then { expect(response.status).to eq 200 }
     Then { expect(JSON.parse(response.body)['my_company_id']).to eq test_company.id.to_s }
-
-    #Then { expect(DummyApplicationController).to respond_to(:company_scope_company_not_set) }
+    #
+    Then { expect(controller).to respond_to(:company_scope_company_not_set) }
   end
 end
