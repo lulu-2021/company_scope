@@ -81,7 +81,7 @@ the company name as a string as:
 
 ```ruby
 class MyCustomDomainMatcher
-  def to_domain(request)
+  def self.to_domain(request)
     .... my custom logic to extrapoulate the company name
     company_name # the return value must be the company_name as a string.
   end
