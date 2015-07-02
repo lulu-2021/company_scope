@@ -4,17 +4,11 @@ module CompanyScope
     # enable namespaced configuration in Rails environments
     config.company_scope = ActiveSupport::OrderedOptions.new
     #
-    #initializer, :after_initialize do |app|
-      #company_scope_enabled = app.config.company_scope[:configured] || false
-      #company_scope_model = app.config.company_scope[:company_model] || :company
-      #company_scope_matcher = app.config.company_scope[:company_name_matcher] || :subdomain_matcher
-
-    config.after_initialize do
+    initializer, :after_initialize do |app|
+      company_scope_enabled = app.config.company_scope[:configured] || false
+      company_scope_model = app.config.company_scope[:company_model] || :company
+      company_scope_matcher = app.config.company_scope[:company_name_matcher] || :subdomain_matcher
       #
-      company_scope_enabled = config.company_scope[:configured] || false
-      company_scope_model = config.company_scope[:company_model] || :company
-      company_scope_matcher = config.company_scope[:company_name_matcher] || :subdomain_matcher
-
       CompanyScope.configure do |c|
         c.enabled = company_scope_enabled
         c.company_model = company_scope_model
@@ -26,10 +20,7 @@ module CompanyScope
         company_config = CompanyScope.config.company_model
         company_name_matcher = CompanyScope.config.company_name_matcher
         # - add MultiCompany Rack middleware to detect the company_name from the subdomain
-        #app.config.middleware.insert_before Rack::Runtime, Custom::MultiCompany, company_config, company_name_matcher
-
-        Rails.application.config.middleware.insert_before Rack::Runtime, Custom::MultiCompany, company_config, company_name_matcher
-
+        app.config.middleware.insert_before Rack::Runtime, Custom::MultiCompany, company_config, company_name_matcher
         # - the base module injects the default scope into company dependant models
         ActiveRecord::Base.send(:include, CompanyScope::Base)
         # - the company_entity module injects class methods for acting as the company!
