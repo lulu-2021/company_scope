@@ -5,13 +5,20 @@ module CompanyScope
     config.company_scope = ActiveSupport::OrderedOptions.new
     #
     #initializer, :after_initialize do |app|
-    config.after_initialize do |app|
-      
+      #company_scope_enabled = app.config.company_scope[:configured] || false
+      #company_scope_model = app.config.company_scope[:company_model] || :company
+      #company_scope_matcher = app.config.company_scope[:company_name_matcher] || :subdomain_matcher
+
+    config.after_initialize do
       #
-      CompanyScope.configure do |config|
-        config.enabled = app.config.company_scope[:configured] || false
-        config.company_model = app.config.company_scope[:company_model] || :company
-        config.company_name_matcher = app.config.company_scope[:company_name_matcher] || :subdomain_matcher
+      company_scope_enabled = config.company_scope[:configured] || false
+      company_scope_model = config.company_scope[:company_model] || :company
+      company_scope_matcher = config.company_scope[:company_name_matcher] || :subdomain_matcher
+
+      CompanyScope.configure do |c|
+        c.enabled = company_scope_enabled
+        c.company_model = company_scope_model
+        c.company_name_matcher = company_scope_matcher
       end
       #
       # - this is set in the template initializer - if not by default it is disabled!
