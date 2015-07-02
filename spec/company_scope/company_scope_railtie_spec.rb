@@ -30,6 +30,6 @@ describe CompanyScope::Railtie do
   end
 
   context 'the company scope configuration should have happened' do
-    Then { expect(Rails.application.config.company_scope[:configured]).to be false }
+    Then { expect(CompanyScope.config.enabled).to be false }
   end
 end
