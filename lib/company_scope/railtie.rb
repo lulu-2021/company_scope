@@ -7,22 +7,23 @@ module CompanyScope
     initializer :after_initialize do |app|
       #
       CompanyScope.configure do |config|
+        config.enabled = app.config.company_scope[:configured] || false
         config.company_model = app.config.company_scope[:company_model] || :company
         config.company_name_matcher = app.config.company_scope[:company_name_matcher] || :subdomain_matcher
       end
       #
-      company_config = CompanyScope.config.company_model
-      company_name_matcher = CompanyScope.config.company_name_matcher
-      #
-      # - add MultiCompany Rack middleware to detect the company_name from the subdomain
-      #app.config.middleware.insert_after Rack::Sendfile, Custom::MultiCompany, company_config, company_name_matcher
-      app.config.middleware.insert_before Rack::Runtime, Custom::MultiCompany, company_config, company_name_matcher
-      # - the base module injects the default scope into company dependant models
-      #
-      ActiveRecord::Base.send(:include, CompanyScope::Base)
-      #
-      # - the company_entity module injects class methods for acting as the company!
-      ActiveRecord::Base.send(:include, CompanyScope::Guardian)
+      company_scope_configured = CompanyScope.config.enabled
+      # - this is set in the template initializer - if not by default it is disabled!
+      if company_scope_configured
+        company_config = CompanyScope.config.company_model
+        company_name_matcher = CompanyScope.config.company_name_matcher
+        # - add MultiCompany Rack middleware to detect the company_name from the subdomain
+        app.config.middleware.insert_before Rack::Runtime, Custom::MultiCompany, company_config, company_name_matcher
+        # - the base module injects the default scope into company dependant models
+        ActiveRecord::Base.send(:include, CompanyScope::Base)
+        # - the company_entity module injects class methods for acting as the company!
+        ActiveRecord::Base.send(:include, CompanyScope::Guardian)
+      end
       #
       if defined?(ActionController::Base)
         # - the control module has some error handling for the application controller
