@@ -3,7 +3,6 @@ require 'spec_helper'
 #
 # This dummy class is needed since the during the application load the class does not
 # yet exist.. it will be overwritten by the version in active_record_models
-#
 class MyCompany < ActiveRecord::Base; end
 #
 require 'spec_helper_load_application'
@@ -28,5 +27,9 @@ describe CompanyScope::Railtie do
 
   context 'after initialisation the App should have the company scoping model configured' do
     Then { expect(Rails.application.config.company_scope[:company_model]).to eq :my_company }
+  end
+
+  context 'the company scope configuration should have happened' do
+    Then { expect(Rails.application.config.company_scope[:configured]).to be false }
   end
 end

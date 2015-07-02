@@ -7,12 +7,14 @@ module CompanyScope
     initializer :after_initialize do |app|
       #
       CompanyScope.configure do |config|
-        config.enabled = app.config.company_scope[:configured] || false
         config.company_model = app.config.company_scope[:company_model] || :company
         config.company_name_matcher = app.config.company_scope[:company_name_matcher] || :subdomain_matcher
       end
       #
-      company_scope_configured = CompanyScope.config.enabled
+      company_scope_configured = app.config.company_scope[:configured] || false
+
+      puts "\n\nRails Starting - CompanyScope gem: #{company_scope_configured}\n\n"
+
       # - this is set in the template initializer - if not by default it is disabled!
       if company_scope_configured
         company_config = CompanyScope.config.company_model

@@ -12,7 +12,6 @@ require File.dirname(__FILE__) + '/company_scope/railtie' if defined? ::Rails::R
 #
 module CompanyScope
   class Config
-    attr_accessor :enabled
     attr_accessor :company_model
     attr_accessor :company_name_matcher
   end
