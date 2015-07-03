@@ -201,8 +201,6 @@ it will be the model that all others will be scoped with.
 The method parameter defaults to :company but can be another model of your choosing such as Account.
 Each model that is scoped by the Company needs to have the company_id column.
 
-NB: The 'CompanyScope' gem does not handle the process of adding migrations or changes to the DB.
-
 
 ### Scoping your models
 
