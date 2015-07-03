@@ -14,7 +14,7 @@ module CompanyScope
 
     def modify_application_rb
       line = "class Application < Rails::Application"
-      gsub_file 'config/environments/production.rb', /(#{Regexp.escape(line)})/mi do |match|
+      gsub_file 'config/application.rb', /(#{Regexp.escape(line)})/mi do |match|
         "class Application < Rails::Application"
         "  config.company_scope[:configured] = false"
       end
