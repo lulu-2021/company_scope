@@ -1,0 +1,13 @@
+class CreateCompanies < ActiveRecord::Migration
+  def change
+    <% if enable_uuid %>
+      create_table :companies, :id => :uuid do |t|
+    <% else %>
+      create_table :companies do |t|
+    <% end %>
+        t.string :company_name,   :limit => 50
+        t.boolean :is_active,     :default => true, null: false
+        t.timestamps
+      end
+  end
+end

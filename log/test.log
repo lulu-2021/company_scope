@@ -494,3 +494,11 @@ Processing by DummyApplicationController#index as HTML
 Completed 200 OK in 0ms (Views: 0.1ms)
 Processing by DummyApplicationController#index as HTML
 Completed 500 Internal Server Error in 0ms
+Processing by DummyApplicationController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms)
+Processing by DummyApplicationController#index as HTML
+Completed 200 OK in 1ms (Views: 0.3ms)
+Processing by DummyApplicationController#index as HTML
+Completed 200 OK in 0ms (Views: 0.2ms)
+Processing by DummyApplicationController#index as HTML
+Completed 500 Internal Server Error in 0ms
