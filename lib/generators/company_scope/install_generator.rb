@@ -36,7 +36,27 @@ module CompanyScope
     def generate_user_migration
       unless options.no_migrations?
         # - generate a user model and migration with a company_id reference a few basic user auth fields
-        generate(:model, :user, 'company_id:id password_hash:string password_salt:string first_name:string{50} last_name:string{50} user_name:string{50}:uniq email_address:string{100}:uniq' )
+        #generate(:model, :user, 'company_id:id password_hash:string password_salt:string first_name:string{50} last_name:string{50} user_name:string{50}:uniq email_address:string{100}:uniq' )
+        migrate_user_model = <<-RUBY
+          company_id:id
+          password_hash:string
+          password_salt:string
+          first_name:string{50}
+          last_name:string{50}
+          user_name:string{50}:uniq
+          email_address:string{100}:uniq
+        RUBY
+        generate(:model, :user, "#{migrate_user_model.gsub("\n", " ")}")
+      end
+    end
+
+    def make_company_the_guardian
+      unless options.no_migrations?
+      end
+    end
+
+    def make_user_a_tenant
+      unless options.no_migrations?
       end
     end
   end
