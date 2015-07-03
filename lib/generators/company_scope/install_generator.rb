@@ -6,7 +6,6 @@ module CompanyScope
 
     class_option :company_class_name, :type => :string, :default => 'company', :desc => "Name of Company Model"
     class_option :user_class_name, :type => :string, :default => 'user', :desc => "Name of User Model"
-    class_option :enable_uuid, :type => :boolean, :default => false, :desc => "Enable UUID if the extension is used"
     class_option :no_migrations, :type => :boolean, :default => false, :desc => "Disable the creation of migrations"
 
     def self.source_root
@@ -30,17 +29,14 @@ module CompanyScope
     def generate_company_migration
       unless options.no_migrations?
         # - generate a company model and migration with a 50 char max on the company name and unique index
-        generate(:model, 'company id: :uuid', 'company_name:string{50}:uniq' )
+        generate(:model, :company, 'company_name:string{50}:uniq' )
       end
     end
 
-    def create_migrations
+    def generate_user_migration
       unless options.no_migrations?
-        #Dir["#{self.class.source_root}/migrations/*.erb"].sort.each do |filepath|
-        #  name = File.basename(filepath)
-        #  template "migrations/#{name}", "db/migrate/#{name}"
-        #  sleep 1
-        #end
+        # - generate a user model and migration with a company_id reference a few basic user auth fields
+        generate(:model, :user, 'company_id:id password_hash:string password_salt:string first_name:string{50} last_name:string{50} user_name:string{50}:uniq email_address:string{100}:uniq' )
       end
     end
   end
