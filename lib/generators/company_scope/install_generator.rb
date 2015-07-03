@@ -20,7 +20,7 @@ module CompanyScope
       insert_config = <<-RUBY
         config.company_scope[:configured] = false
       RUBY
-      if File.readlines(config_file).grep(/config.company_scope[:configured] = false/).size == 0
+      if File.readlines(config_file).grep(/config.company_scope\[:configured\] = false/).size == 0
         gsub_file config_file, /(#{Regexp.escape(line)})/mi do |match|
           match << "\n#{insert_config}"
         end
@@ -29,17 +29,17 @@ module CompanyScope
 
     def generate_company_migration
       unless options.no_migrations?
-        generate(:model, )
+        generate(:model, :company, company_name: :string )
       end
     end
 
     def create_migrations
       unless options.no_migrations?
-        Dir["#{self.class.source_root}/migrations/*.erb"].sort.each do |filepath|
-          name = File.basename(filepath)
-          template "migrations/#{name}", "db/migrate/#{name}"
-          sleep 1
-        end
+        #Dir["#{self.class.source_root}/migrations/*.erb"].sort.each do |filepath|
+        #  name = File.basename(filepath)
+        #  template "migrations/#{name}", "db/migrate/#{name}"
+        #  sleep 1
+        #end
       end
     end
   end
