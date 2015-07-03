@@ -502,3 +502,11 @@ Processing by DummyApplicationController#index as HTML
 Completed 200 OK in 0ms (Views: 0.2ms)
 Processing by DummyApplicationController#index as HTML
 Completed 500 Internal Server Error in 0ms
+Processing by DummyApplicationController#index as HTML
+Completed 200 OK in 1ms (Views: 1.1ms)
+Processing by DummyApplicationController#index as HTML
+Completed 200 OK in 1ms (Views: 0.4ms)
+Processing by DummyApplicationController#index as HTML
+Completed 200 OK in 0ms (Views: 0.2ms)
+Processing by DummyApplicationController#index as HTML
+Completed 500 Internal Server Error in 0ms

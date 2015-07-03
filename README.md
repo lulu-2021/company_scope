@@ -37,9 +37,28 @@ Getting started
 ===============
 There are three main steps in adding multi-tenancy/company to your app with company_scope:
 
-1. Determining the company/account. Such as using the sub-domain.
-2. Setting the current company and controller based setup.
-3. Scoping your models.
+1. Run the install generator
+2. Determine the company/account. Such as using the sub-domain.
+3. Setting the current company and controller based setup.
+4. Scoping your models.
+
+### Run the install generator
+
+The gem has an install generator that adds a configuration setting to config/application.rb
+and also creates two models with associated migrations. The models are company and user.
+The company has the acts_as_guardian company_scope module inserted, and the user has
+the acts_as_company company_scope module inserted.
+
+```
+rails generate company_scope:install
+```
+
+If you are planning to use different models or to modify existing models you can run the
+install generator without the migrations and model creation as follows
+
+```
+rails generate company_scope:install --no_migrations
+```
 
 
 ### Process of determining the company/account
