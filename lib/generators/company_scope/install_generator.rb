@@ -50,8 +50,9 @@ module CompanyScope
     end
 
     def make_company_the_guardian
+      # - add the acts_as_guardian company_scope module into the company model
       unless options.no_migrations?
-        config_file = 'app/company.rb'
+        config_file = 'app/models/company.rb'
         line = "class Company < ActiveRecord::Base"
         insert_guardian_scope = "acts_as_guardian"
         if File.readlines(config_file).grep(/acts_as_guardian/).size == 0
@@ -63,8 +64,9 @@ module CompanyScope
     end
 
     def make_user_a_tenant
+      # - add the acts_as_company company_scope module into the user model
       unless options.no_migrations?
-        config_file = 'app/user.rb'
+        config_file = 'app/models/user.rb'
         line = "class User < ActiveRecord::Base"
         insert_tenant_scope = "acts_as_company"
         if File.readlines(config_file).grep(/acts_as_company/).size == 0
