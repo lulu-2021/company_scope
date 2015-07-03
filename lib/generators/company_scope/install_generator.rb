@@ -29,7 +29,8 @@ module CompanyScope
 
     def generate_company_migration
       unless options.no_migrations?
-        generate(:model, :company, company_name: :string )
+        # - generate a company model and migration with a 50 char max on the company name and unique index
+        generate(:model, :company, company_name:string{50}:uniq )
       end
     end
 
