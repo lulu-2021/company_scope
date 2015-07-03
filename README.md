@@ -60,6 +60,19 @@ install generator without the migrations and model creation as follows
 rails generate company_scope:install --no_migrations
 ```
 
+### Enabling the company_scope gem!
+
+The install generator also added a configuration setting into config/application.rb that needs
+to be enabled once the configuration is completed.
+
+```
+  class Application < Rails::Application
+    config.company_scope[:configured] = false
+
+```
+
+This is deliberately set to false at the outset. Set this to true AFTER all the configuration of
+the gem is completed.
 
 ### Process of determining the company/account
 
