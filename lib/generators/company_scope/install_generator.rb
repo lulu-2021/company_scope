@@ -16,12 +16,12 @@ module CompanyScope
       # add the company_scope configuration enabler into config/application.rb
       line = "class Application < Rails::Application"
       gsub_file 'config/application.rb', /(#{Regexp.escape(line)})/mi do |match|
-        "#{match}\n  config.company_scope[:configured] = false"
+        "#{match}\n    config.company_scope[:configured] = false"
       end
     end
 
     def create_migrations
-      Dir["#{self.class.source_root}/migrations/*.rb"].sort.each do |filepath|
+      Dir["#{self.class.source_root}/migrations/*.erb"].sort.each do |filepath|
         name = File.basename(filepath)
         template "migrations/#{name}", "db/migrate/#{name}"
         sleep 1
