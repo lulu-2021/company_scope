@@ -17,14 +17,19 @@ module CompanyScope
       # add the company_scope configuration enabler into config/application.rb
       config_file = 'config/application.rb'
       line = "class Application < Rails::Application"
-      check_config = <<-RUBY
-        config.company_scope[:configured] =
+      insert_config = <<-RUBY
+        config.company_scope[:configured] = false
       RUBY
-      insert_line = "\n#{check_config} false\n"
-      if File.readlines(config_file).grep(/check_config/).size == 0
+      if File.readlines(config_file).grep(/config.company_scope[:configured] = false/).size == 0
         gsub_file config_file, /(#{Regexp.escape(line)})/mi do |match|
-          match << "\n#{insert_line}"
+          match << "\n#{insert_config}"
         end
+      end
+    end
+
+    def generate_company_migration
+      unless options.no_migrations?
+        generate(:model, )
       end
     end
 
