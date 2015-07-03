@@ -6,7 +6,7 @@ module CompanyScope
 
     class_option :company_class_name, :type => :string, :default => 'company', :desc => "Name of Company Model"
     class_option :user_class_name, :type => :string, :default => 'user', :desc => "Name of User Model"
-    class_option :enable_uuid, :type => boolean, :default => false, :desc => "Enable UUID if the extension is used"
+    class_option :enable_uuid, :type => :boolean, :default => false, :desc => "Enable UUID if the extension is used"
 
     def self.source_root
       File.expand_path("../templates", __FILE__)
