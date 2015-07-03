@@ -13,10 +13,10 @@ module CompanyScope
     end
 
     def modify_application_rb
+      # add the company_scope configuration enabler into config/application.rb
       line = "class Application < Rails::Application"
       gsub_file 'config/application.rb', /(#{Regexp.escape(line)})/mi do |match|
-        "class Application < Rails::Application"
-        "  config.company_scope[:configured] = false"
+        "#{match}\n  config.company_scope[:configured] = false"
       end
     end
 
