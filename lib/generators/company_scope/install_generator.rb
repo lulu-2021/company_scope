@@ -15,13 +15,16 @@ module CompanyScope
 
     def modify_application_rb
       # add the company_scope configuration enabler into config/application.rb
+      config_file = 'config/application.rb'
       line = "class Application < Rails::Application"
-      check_config = "config.company_scope[:configured]"
-      insert_line = "#{check_config} = false"
-      #unless
-      gsub_file 'config/application.rb', /(#{Regexp.escape(line)})/mi do |match|
-        # "#{match}\n    #{insert_line}"
-        match << "#{insert_line}"
+      check_config = <<-RUBY
+        config.company_scope[:configured] =
+      RUBY
+      insert_line = "\n#{check_config} false\n"
+      if File.readlines(config_file).grep(/check_config/).size == 0
+        gsub_file config_file, /(#{Regexp.escape(line)})/mi do |match|
+          match << "\n#{insert_line}"
+        end
       end
     end
 
