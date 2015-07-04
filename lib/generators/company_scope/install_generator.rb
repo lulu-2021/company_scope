@@ -17,7 +17,7 @@ module CompanyScope
       config_file = 'config/application.rb'
       line = "class Application < Rails::Application"
       insert_config = <<-RUBY
-        config.company_scope[:configured] = false
+      config.company_scope[:configured] = false
       RUBY
       if File.readlines(config_file).grep(/config.company_scope\[:configured\] = false/).size == 0
         gsub_file config_file, /(#{Regexp.escape(line)})/mi do |match|
@@ -37,7 +37,7 @@ module CompanyScope
       unless options.no_migrations?
         # - generate a user model and migration with a company_id reference a few basic user auth fields
         migrate_user_model = <<-RUBY
-          company_id:id
+          references:company_id
           password_hash:string
           password_salt:string
           first_name:string{50}
@@ -81,9 +81,9 @@ module CompanyScope
       controller_file = 'app/controllers/application_controller.rb'
       line = 'class ApplicationController < ActionController::Base'
       insert_company_scope = <<-RUBY
-        company_setup\n
-        set_scoping_class :company\n
-        acts_as_company_filter\n
+      company_setup\n
+      set_scoping_class :company\n
+      acts_as_company_filter\n
       RUBY
       if File.readlines(controller_file).grep(/company_setup/).size == 0
         gsub_file controller_file, /(#{Regexp.escape(line)})/mi do |match|

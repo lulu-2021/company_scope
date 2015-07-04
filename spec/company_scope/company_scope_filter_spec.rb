@@ -11,8 +11,11 @@ require 'spec_helper_load_application'
 require 'active_record_models'
 require 'active_record_schema'
 #
+CompanyScope.config.enabled = true
+
 class DummyApplicationController < ActionController::Base
   include Rails.application.routes.url_helpers
+
   company_setup # - inject the setup
 end
 #
