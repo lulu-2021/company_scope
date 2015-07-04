@@ -26,6 +26,21 @@ module CompanyScope
       end
     end
 
+    def add_scoping_to_application_controller
+      controller_file = 'app/controllers/application_controller.rb'
+      line = 'class ApplicationController < ActionController::Base'
+      insert_company_scope = <<-RUBY
+        company_setup\n
+        set_scoping_class :company\n
+        acts_as_company_filter\n
+      RUBY
+      if File.readlines(controller_file).grep(/company_setup/).size == 0
+        gsub_file controller_file, /(#{Regexp.escape(line)})/mi do |match|
+          match << "\n#insert_company_scope"
+        end
+      end
+    end
+
     def generate_company_migration
       unless options.no_migrations?
         # - generate a company model and migration with a 50 char max on the company name and unique index
@@ -76,5 +91,6 @@ module CompanyScope
         end
       end
     end
+
   end
 end
