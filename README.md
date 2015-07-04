@@ -47,7 +47,8 @@ There are three main steps in adding multi-tenancy/company to your app with comp
 The gem has an install generator that adds a configuration setting to config/application.rb
 and also creates two models with associated migrations. The models are company and user.
 The company has the acts_as_guardian company_scope module inserted, and the user has
-the acts_as_company company_scope module inserted.
+the acts_as_company company_scope module inserted. It finally also adds the filtering configuration
+into the Application Controller. (See further below for an explanation)
 
 ```
 rails generate company_scope:install
@@ -72,7 +73,7 @@ to be enabled once the configuration is completed.
 ```
 
 This is deliberately set to false at the outset. Set this to true AFTER all the configuration of
-the gem is completed.
+the gem is completed, i.e. the company model exists and you have run the migration.
 
 ### Process of determining the company/account
 
@@ -182,9 +183,9 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-The above three methods need to be added to the Rails Controllers. For small systems they
-will typically be added to the ApplicationController. However they can be split into
-child-controllers dependent on the layout of the application.
+The above three methods have been added to the Rails Application Controller, by the install
+generator. For small systems they will typically remain there unless you have pages that do
+not require to be scoped by the company in which case they should be added to a child.
 
 All Controllers that inherit from the Controller that implements the acts_as_company_filter
 will have an around filter applied that set the Company class attribute required for the scoping
@@ -238,15 +239,11 @@ class User < ActiveRecord::Base
 end
 ```
 
-### The Gem is currently being used in Rails 4 and Rails-API apps and is tested against Postgres
+#### The Gem is currently being used in Rails 4 and Rails-API apps and is tested against Postgres
 
-### It should work with other databases such as MySQL without any issues
+#### It should work with other databases such as MySQL without any issues
 
-
-## Development
-
-
-## Contributing
+### Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/company_scope/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
