@@ -36,7 +36,7 @@ module CompanyScope
       RUBY
       if File.readlines(controller_file).grep(/company_setup/).size == 0
         gsub_file controller_file, /(#{Regexp.escape(line)})/mi do |match|
-          match << "\n#insert_company_scope"
+          match << "\n#{insert_company_scope}"
         end
       end
     end
