@@ -37,7 +37,7 @@ module CompanyScope
       unless options.no_migrations?
         # - generate a user model and migration with a company_id reference a few basic user auth fields
         migrate_user_model = <<-RUBY
-          references:company_id
+          company_id:references
           password_hash:string
           password_salt:string
           first_name:string{50}
