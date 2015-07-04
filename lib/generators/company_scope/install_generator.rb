@@ -57,7 +57,7 @@ module CompanyScope
         insert_guardian_scope = "acts_as_guardian"
         if File.readlines(config_file).grep(/acts_as_guardian/).size == 0
           gsub_file config_file, /(#{Regexp.escape(line)})/mi do |match|
-            match << "\n#{insert_guardian_scope}"
+            match << "\n\t#{insert_guardian_scope}"
           end
         end
       end
@@ -71,7 +71,7 @@ module CompanyScope
         insert_tenant_scope = "acts_as_company"
         if File.readlines(config_file).grep(/acts_as_company/).size == 0
           gsub_file config_file, /(#{Regexp.escape(line)})/mi do |match|
-            match << "\n#{insert_tenant_scope}"
+            match << "\n\t#{insert_tenant_scope}"
           end
         end
       end
