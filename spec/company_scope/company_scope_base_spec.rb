@@ -124,6 +124,20 @@ describe CompanyScope::Base do
     Then { expect(test_task).to have(1).errors_on(:my_company_id) }
   end
 
+
+
+  context 'attempting to save a new task when the my_company has been set' do
+    Given(:retrieve_task) { Task.find_by_name('test_task_2') }
+
+    Given!(:test_company) { MyCompany.create(company_name: 'DEFAULT2') }
+    Given!(:test_task) { Task.new(name: 'test_task_2') }
+    When { MyCompany.current_id = test_company.id ; test_task.save }
+
+    Then { expect(retrieve_task.my_company_id).to eq test_company.id }
+  end
+
+
+
   context 'should raise an Error during an attempt to set the my_company to the wrong value' do
     Given(:invalid_id) { 99999 }
     Given!(:retrieve_user) {
@@ -132,7 +146,7 @@ describe CompanyScope::Base do
     }
 
     Then {
-      MyCompany.current_id = invalid_id  # i.e. be sure its out of range!
+      MyCompany.current_id = invalid_id
       expect(lambda { retrieve_user.save }).to raise_error('CompanyScope::Control::CompanyAccessViolationError')
     }
   end
