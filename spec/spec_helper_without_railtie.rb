@@ -4,6 +4,7 @@
 if defined?(ActiveRecord::Base)
   ActiveRecord::Base.send(:include, CompanyScope::Base)
   ActiveRecord::Base.send(:include, CompanyScope::Guardian)
+  ActiveRecord::Base.send(:include, CompanyScope::MultiGuardian)
 end
 
 if defined?(ActionController::Base)

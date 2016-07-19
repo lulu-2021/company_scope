@@ -17,6 +17,8 @@ module CompanyScope
       #
       # - this is set in the template initializer - if not by default it is disabled!
       if CompanyScope.config.enabled
+        puts "\n\nCOMPANY_SCOPE LOADING ENABLED\n\n"
+
         company_config = CompanyScope.config.company_model
         company_name_matcher = CompanyScope.config.company_name_matcher
         # - add MultiCompany Rack middleware to detect the company_name from the subdomain
@@ -25,6 +27,9 @@ module CompanyScope
         ActiveRecord::Base.send(:include, CompanyScope::Base)
         # - the company_entity module injects class methods for acting as the company!
         ActiveRecord::Base.send(:include, CompanyScope::Guardian)
+        #
+        # this allows objects to have a relationship with several guardians
+        ActiveRecord::Base.send(:include, CompanyScope::MultiGuardian)
       end
       #
       if defined?(ActionController::Base)
