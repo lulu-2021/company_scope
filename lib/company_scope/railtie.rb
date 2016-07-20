@@ -25,6 +25,9 @@ module CompanyScope
         ActiveRecord::Base.send(:include, CompanyScope::Base)
         # - the company_entity module injects class methods for acting as the company!
         ActiveRecord::Base.send(:include, CompanyScope::Guardian)
+        #
+        # this allows objects to have a relationship with several guardians
+        ActiveRecord::Base.send(:include, CompanyScope::MultiGuardian)
       end
       #
       if defined?(ActionController::Base)
