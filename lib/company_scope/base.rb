@@ -34,6 +34,7 @@ module CompanyScope
         value = block.call # call the block - i.e the real AR scoping desired without the company
         return value
       ensure # finally slot the correct company scoping back into place as well as the correct old scope!
+        scoping_class = Module.const_get(CompanyScope.config.company_model.to_s.classify)
         scoping_class.current_id = cached_scoping_class_id
         self.unscoped = cached_unscoped
       end
