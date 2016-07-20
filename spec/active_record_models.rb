@@ -28,5 +28,5 @@ class Task < ActiveRecord::Base
 end
 
 class Lead < ActiveRecord::Base
-  acts_as_company_view :my_company, :my_company_view
+  acts_as_many_company :my_company, :my_company_view
 end

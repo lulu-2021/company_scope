@@ -17,8 +17,6 @@ module CompanyScope
       #
       # - this is set in the template initializer - if not by default it is disabled!
       if CompanyScope.config.enabled
-        puts "\n\nCOMPANY_SCOPE LOADING ENABLED\n\n"
-
         company_config = CompanyScope.config.company_model
         company_name_matcher = CompanyScope.config.company_name_matcher
         # - add MultiCompany Rack middleware to detect the company_name from the subdomain
