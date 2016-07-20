@@ -14,6 +14,30 @@ module CompanyScope
     #
     module CompanyScopeClassMethods
       #
+      def cached_unscoped=(unscoped)
+        RequestStore.store[:company_scope_unscoped] = unscoped
+      end
+
+      def cached_unscoped
+        RequestStore.store[:company_scope_unscoped]
+      end
+
+      def without_company(&block)
+        if block.nil?
+          raise ArgumentError, "block required"
+        end
+        scoping_class = Module.const_get(CompanyScope.config.company_model.to_s.classify)
+        cached_scoping_class_id = scoping_class.current_id # store the current company scoping
+        self.cached_unscoped = unscoped
+        scoping_class.current_id = nil # remove the current scoping id
+
+        value = block.call # call the block - i.e the real AR scoping desired without the company
+        return value
+      ensure # finally slot the correct company scoping back into place as well as the correct old scope!
+        scoping_class.current_id = cached_scoping_class_id
+        self.unscoped = cached_unscoped
+      end
+      #
       def acts_as_company(tenant = :company)
 
         belongs_to tenant.to_s.underscore.to_sym
